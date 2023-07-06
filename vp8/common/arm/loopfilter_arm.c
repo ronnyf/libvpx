@@ -9,6 +9,7 @@
  */
 
 #include "./vpx_config.h"
+#if HAVE_NEON
 #include "./vp8_rtcd.h"
 #include "vp8/common/arm/loopfilter_arm.h"
 #include "vp8/common/loopfilter.h"
@@ -83,3 +84,5 @@ void vp8_loop_filter_bv_neon(unsigned char *y_ptr, unsigned char *u_ptr,
     vp8_loop_filter_vertical_edge_uv_neon(u_ptr + 4, uv_stride, blim, lim,
                                           hev_thr, v_ptr + 4);
 }
+
+#endif // HAVE_NEON

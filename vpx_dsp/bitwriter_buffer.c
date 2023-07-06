@@ -8,10 +8,11 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if CONFIG_ENCODERS
+
 #include <limits.h>
 #include <stdlib.h>
-
-#include "./vpx_config.h"
 #include "./bitwriter_buffer.h"
 
 size_t vpx_wb_bytes_written(const struct vpx_write_bit_buffer *wb) {
@@ -41,3 +42,5 @@ void vpx_wb_write_inv_signed_literal(struct vpx_write_bit_buffer *wb, int data,
   vpx_wb_write_literal(wb, abs(data), bits);
   vpx_wb_write_bit(wb, data < 0);
 }
+
+#endif // CONFIG_ENCODERS

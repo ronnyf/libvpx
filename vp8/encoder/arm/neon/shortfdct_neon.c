@@ -8,6 +8,9 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if HAVE_NEON
+
 #include <arm_neon.h>
 
 #include "./vp8_rtcd.h"
@@ -259,3 +262,5 @@ void vp8_short_fdct8x4_neon(int16_t *input, int16_t *output, int pitch) {
   vst1q_s16(output + 24, q3s16);
   return;
 }
+
+#endif // HAVE_NEON

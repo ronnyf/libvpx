@@ -8,11 +8,14 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if HAVE_NEON
+
 #include <arm_neon.h>
 #include <assert.h>
 #include <math.h>
 
-#include "./vpx_config.h"
 #include "vpx_mem/vpx_mem.h"
 
 #include "vp9/common/vp9_quant_common.h"
@@ -406,3 +409,5 @@ void vp9_highbd_quantize_fp_32x32_neon(
   *eob_ptr = get_max_eob(v_eobmax);
 }
 #endif  // CONFIG_VP9_HIGHBITDEPTH
+
+#endif // HAVE_NEON

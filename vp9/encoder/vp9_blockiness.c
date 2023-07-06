@@ -7,8 +7,10 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
+
 #include <stdlib.h>
 
+#include "./vpx_config.h"
 #include "vpx/vpx_integer.h"
 #include "vpx_ports/system_state.h"
 #include "vp9/encoder/vp9_blockiness.h"

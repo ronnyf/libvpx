@@ -8,12 +8,15 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <math.h>
-#include <stdlib.h>
-#include <string.h>
+#include "./vpx_config.h"
+#if CONFIG_VP9
 
 #include "./vpx_dsp_rtcd.h"
 #include "vpx_dsp/inv_txfm.h"
+
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
 
 void vpx_iwht4x4_16_add_c(const tran_low_t *input, uint8_t *dest, int stride) {
   /* 4-point reversible, orthonormal inverse Walsh-Hadamard in 3.5 adds,
@@ -2699,3 +2702,5 @@ void vpx_highbd_idct32x32_1_add_c(const tran_low_t *input, uint16_t *dest,
 }
 
 #endif  // CONFIG_VP9_HIGHBITDEPTH
+
+#endif // CONFIG_VP9

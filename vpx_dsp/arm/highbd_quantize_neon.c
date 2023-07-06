@@ -8,10 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
-
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if HAVE_NEON && CONFIG_VP9_HIGHBITDEPTH && CONFIG_VP9_ENCODER
+
+#include <arm_neon.h>
+
 #include "vpx_dsp/arm/mem_neon.h"
 #include "vp9/common/vp9_scan.h"
 #include "vp9/encoder/vp9_block.h"
@@ -303,3 +306,5 @@ void vpx_highbd_quantize_b_32x32_neon(
   }
 #endif  // VPX_ARCH_AARCH64
 }
+
+#endif // HAVE_NEON && CONFIG_VP9_HIGHBITDEPTH && CONFIG_VP9_ENCODER

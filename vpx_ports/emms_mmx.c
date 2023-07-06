@@ -8,8 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if VPX_ARCH_X86 && HAVE_MMX
+
 #include <mmintrin.h>
 
 #include "vpx_ports/system_state.h"
 
 void vpx_clear_system_state() { _mm_empty(); }
+
+#endif

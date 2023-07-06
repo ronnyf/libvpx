@@ -41,5 +41,4 @@ void vp8_multiframe_quality_enhance(struct VP8Common *cm);
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
 #endif  // VPX_VP8_COMMON_POSTPROC_H_

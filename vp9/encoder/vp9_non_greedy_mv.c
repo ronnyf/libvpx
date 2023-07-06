@@ -8,6 +8,9 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if CONFIG_NON_GREEDY_MV
+
 #include "vp9/common/vp9_mv.h"
 #include "vp9/encoder/vp9_non_greedy_mv.h"
 // TODO(angiebird): move non_greedy_mv related functions to this file
@@ -534,3 +537,5 @@ void vp9_get_local_structure(const YV12_BUFFER_CONFIG *cur_frame,
     }
   }
 }
+
+#endif // CONFIG_NON_GREEDY_MV

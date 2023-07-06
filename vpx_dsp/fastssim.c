@@ -10,12 +10,16 @@
  *  This code was originally written by: Nathan E. Egge, at the Daala
  *  project.
  */
+
+#include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#if CONFIG_ENCODERS
+
 #include <assert.h>
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
-#include "./vpx_config.h"
-#include "./vpx_dsp_rtcd.h"
 #include "vpx_dsp/ssim.h"
 #include "vpx_ports/system_state.h"
 
@@ -496,3 +500,5 @@ double vpx_calc_fastssim(const YV12_BUFFER_CONFIG *source,
   ssimv = (*ssim_y) * .8 + .1 * ((*ssim_u) + (*ssim_v));
   return convert_ssim_db(ssimv, 1.0);
 }
+
+#endif // CONFIG_ENCODERS

@@ -11,6 +11,9 @@
 #ifndef VPX_VPX_DSP_ARM_VPX_CONVOLVE8_NEON_ASM_H_
 #define VPX_VPX_DSP_ARM_VPX_CONVOLVE8_NEON_ASM_H_
 
+#include "./vpx_config.h"
+#if HAVE_NEON_ASM
+
 #define DECLARE_FILTER(dir, type)                                  \
   void vpx_convolve8_##dir##_filter_##type##_neon(                 \
       const uint8_t *src, ptrdiff_t src_stride, uint8_t *dst,      \
@@ -26,4 +29,5 @@ DECLARE_FILTER(avg_vert, type1)
 DECLARE_FILTER(vert, type2)
 DECLARE_FILTER(avg_vert, type2)
 
+#endif // HAVE_NEON_ASM
 #endif  // VPX_VPX_DSP_ARM_VPX_CONVOLVE8_NEON_ASM_H_

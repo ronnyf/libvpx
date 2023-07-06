@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if !CONFIG_REALTIME_ONLY
+
 #include <math.h>
 
 #include "vpx_ports/mem.h"
@@ -245,3 +249,5 @@ int vp9_block_energy(VP9_COMP *cpi, MACROBLOCK *x, BLOCK_SIZE bs) {
   vpx_clear_system_state();
   return scale_block_energy(cpi, var);
 }
+
+#endif // !CONFIG_REALTIME_ONLY

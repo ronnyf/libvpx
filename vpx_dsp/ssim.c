@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if CONFIG_ENCODERS && CONFIG_INTERNAL_STATS
+
 #include <assert.h>
 #include <math.h>
 #include "./vpx_dsp_rtcd.h"
@@ -459,3 +463,5 @@ double vpx_highbd_calc_ssim(const YV12_BUFFER_CONFIG *source,
 }
 
 #endif  // CONFIG_VP9_HIGHBITDEPTH
+
+#endif // CONFIG_ENCODERS

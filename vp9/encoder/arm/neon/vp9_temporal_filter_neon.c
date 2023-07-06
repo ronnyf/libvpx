@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if HAVE_NEON && !CONFIG_REALTIME_ONLY
+
 #include <assert.h>
 #include <arm_neon.h>
 
@@ -847,3 +851,5 @@ void vp9_apply_temporal_filter_neon(
                                use_whole_blk, u_accum, u_count, v_accum,
                                v_count, y_dist_ptr, u_dist_ptr, v_dist_ptr);
 }
+
+#endif // HAVE_NEON && !CONFIG_REALTIME_ONLY

@@ -432,4 +432,4 @@ int vp9_post_proc_frame(struct VP9Common *cm, YV12_BUFFER_CONFIG *dest,
   if (flags & VP9D_MFQE) swap_mi_and_prev_mi(cm);
   return 0;
 }
-#endif  // CONFIG_VP9_POSTPROC
+#endif  // CONFIG_VP9_POSTPROC && CONFIG_INTERNAL_STATS

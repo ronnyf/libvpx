@@ -11,6 +11,10 @@
 #ifndef VPX_VP9_ENCODER_VP9_AQ_VARIANCE_H_
 #define VPX_VP9_ENCODER_VP9_AQ_VARIANCE_H_
 
+#include "./vpx_config.h"
+
+#if !CONFIG_REALTIME_ONLY
+
 #include "vp9/encoder/vp9_encoder.h"
 
 #ifdef __cplusplus
@@ -30,5 +34,5 @@ double vp9_log_block_var(VP9_COMP *cpi, MACROBLOCK *x, BLOCK_SIZE bs);
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // !CONFIG_REALTIME_ONLY
 #endif  // VPX_VP9_ENCODER_VP9_AQ_VARIANCE_H_

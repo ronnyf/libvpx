@@ -8,6 +8,11 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vp9_rtcd.h"
+
+#if !CONFIG_REALTIME_ONLY
+
 #include <assert.h>
 #include <math.h>
 #include <limits.h>
@@ -1203,3 +1208,5 @@ void vp9_temporal_filter(VP9_COMP *cpi, int distance) {
   else
     vp9_temporal_filter_row_mt(cpi);
 }
+
+#endif // CONFIG_REALTIME_ONLY

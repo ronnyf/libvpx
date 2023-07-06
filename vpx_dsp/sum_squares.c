@@ -9,6 +9,9 @@
  */
 
 #include "./vpx_dsp_rtcd.h"
+#include "./vpx_config.h"
+
+#if CONFIG_ENCODERS
 
 uint64_t vpx_sum_squares_2d_i16_c(const int16_t *src, int stride, int size) {
   int r, c;
@@ -24,3 +27,5 @@ uint64_t vpx_sum_squares_2d_i16_c(const int16_t *src, int stride, int size) {
 
   return ss;
 }
+
+#endif // CONFIG_ENCODERS

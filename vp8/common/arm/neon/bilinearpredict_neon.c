@@ -8,11 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
-#include <string.h>
-
 #include "./vpx_config.h"
 #include "./vp8_rtcd.h"
+
+#if HAVE_NEON
+
+#include <arm_neon.h>
+#include <string.h>
 #include "vpx_dsp/arm/mem_neon.h"
 
 static const uint8_t bifilter4_coeff[8][2] = { { 128, 0 }, { 112, 16 },
@@ -762,3 +764,5 @@ void vp8_bilinear_predict16x16_neon(unsigned char *src_ptr,
   }
   return;
 }
+
+#endif // HAVE_NEON

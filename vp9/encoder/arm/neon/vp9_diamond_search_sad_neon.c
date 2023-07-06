@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if HAVE_NEON
+
 #include <assert.h>
 #include <arm_neon.h>
 
@@ -294,3 +298,5 @@ int vp9_diamond_search_sad_neon(const MACROBLOCK *x,
   *best_mv = bmv.as_mv;
   return best_sad;
 }
+
+#endif // HAVE_NEON

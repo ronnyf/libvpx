@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if !CONFIG_REALTIME_ONLY
+
 #include <limits.h>
 #include <math.h>
 #include "vpx_dsp/vpx_dsp_common.h"
@@ -158,3 +162,5 @@ void vp9_caq_select_segment(VP9_COMP *cpi, MACROBLOCK *mb, BLOCK_SIZE bs,
     }
   }
 }
+
+#endif // !CONFIG_REALTIME_ONLY

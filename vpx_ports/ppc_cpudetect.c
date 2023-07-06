@@ -8,13 +8,15 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if VPX_ARCH_PPC
+
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdint.h>
 #include <asm/cputable.h>
 #include <linux/auxvec.h>
 
-#include "./vpx_config.h"
 #include "vpx_ports/ppc.h"
 
 #if CONFIG_RUNTIME_CPU_DETECT
@@ -78,3 +80,5 @@ out_close:
 // changed.
 int ppc_simd_caps(void) { return 0; }
 #endif  // CONFIG_RUNTIME_CPU_DETECT
+
+#endif // VPX_ARCH_PPC

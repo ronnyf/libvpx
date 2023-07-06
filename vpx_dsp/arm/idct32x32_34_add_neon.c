@@ -8,10 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
-
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if HAVE_NEON && CONFIG_VP9
+
+#include <arm_neon.h>
+
 #include "vpx_dsp/arm/idct_neon.h"
 #include "vpx_dsp/arm/mem_neon.h"
 #include "vpx_dsp/arm/transpose_neon.h"
@@ -511,3 +514,5 @@ void vpx_idct32x32_34_add_neon(const tran_low_t *input, uint8_t *dest,
     dest += 8;
   }
 }
+
+#endif // HAVE_NEON && CONFIG_VP9

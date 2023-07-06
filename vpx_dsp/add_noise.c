@@ -12,6 +12,7 @@
 #include <stdlib.h>
 
 #include "./vpx_config.h"
+#if !CONFIG_POSTPROC && !CONFIG_VP9_POSTPROC
 #include "./vpx_dsp_rtcd.h"
 
 #include "vpx/vpx_integer.h"
@@ -72,3 +73,5 @@ set_noise:
   // Returns the highest non 0 value used in distribution.
   return -char_dist[0];
 }
+
+#endif // !CONFIG_POSTPROC && !CONFIG_VP9_POSTPROC

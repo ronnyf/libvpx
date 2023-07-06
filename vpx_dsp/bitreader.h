@@ -11,6 +11,8 @@
 #ifndef VPX_VPX_DSP_BITREADER_H_
 #define VPX_VPX_DSP_BITREADER_H_
 
+#if CONFIG_DECODERS
+
 #include <stddef.h>
 #include <stdio.h>
 #include <limits.h>
@@ -159,5 +161,5 @@ static INLINE int vpx_read_tree(vpx_reader *r, const vpx_tree_index *tree,
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // CONFIG_DECODERS
 #endif  // VPX_VPX_DSP_BITREADER_H_

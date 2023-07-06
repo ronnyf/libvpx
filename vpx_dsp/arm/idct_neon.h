@@ -11,9 +11,11 @@
 #ifndef VPX_VPX_DSP_ARM_IDCT_NEON_H_
 #define VPX_VPX_DSP_ARM_IDCT_NEON_H_
 
+#include "./vpx_config.h"
+#if HAVE_NEON && CONFIG_VP9
+
 #include <arm_neon.h>
 
-#include "./vpx_config.h"
 #include "vpx_dsp/arm/transpose_neon.h"
 #include "vpx_dsp/txfm_common.h"
 #include "vpx_dsp/vpx_dsp_common.h"
@@ -916,4 +918,5 @@ void vpx_idct32_6_neon(const tran_low_t *input, int16_t *output);
 void vpx_idct32_8_neon(const int16_t *input, void *const output, int stride,
                        const int highbd_flag);
 
+#endif // HAVE_NEON && CONFIG_VP9
 #endif  // VPX_VPX_DSP_ARM_IDCT_NEON_H_

@@ -13,6 +13,8 @@
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
 
+#if CONFIG_ENCODERS
+
 #include "vpx/vpx_integer.h"
 #include "vpx_ports/mem.h"
 
@@ -254,3 +256,5 @@ highbd_sadMxNx4D(4, 4)
 /* clang-format on */
 
 #endif  // CONFIG_VP9_HIGHBITDEPTH
+
+#endif // CONFIG_ENCODERS

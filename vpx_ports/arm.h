@@ -13,6 +13,8 @@
 #include <stdlib.h>
 #include "vpx_config.h"
 
+#if VPX_ARCH_ARM
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -35,5 +37,5 @@ int arm_cpu_caps(void);
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // VPX_ARCH_ARM
 #endif  // VPX_VPX_PORTS_ARM_H_

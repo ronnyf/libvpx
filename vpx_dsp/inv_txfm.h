@@ -11,9 +11,11 @@
 #ifndef VPX_VPX_DSP_INV_TXFM_H_
 #define VPX_VPX_DSP_INV_TXFM_H_
 
+#include "./vpx_config.h"
+#if CONFIG_VP9
+
 #include <assert.h>
 
-#include "./vpx_config.h"
 #include "vpx_dsp/txfm_common.h"
 #include "vpx_ports/mem.h"
 
@@ -121,5 +123,5 @@ static INLINE uint8_t clip_pixel_add(uint8_t dest, tran_high_t trans) {
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // CONFIG_VP9
 #endif  // VPX_VPX_DSP_INV_TXFM_H_

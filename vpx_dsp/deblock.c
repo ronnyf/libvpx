@@ -9,6 +9,10 @@
  */
 #include <assert.h>
 #include <stdlib.h>
+
+#include "./vpx_config.h"
+#if !CONFIG_POSTPROC && !CONFIG_VP9_POSTPROC
+
 #include "./vpx_dsp_rtcd.h"
 #include "vpx/vpx_integer.h"
 
@@ -194,3 +198,5 @@ void vpx_mbpost_proc_down_c(unsigned char *dst, int pitch, int rows, int cols,
     }
   }
 }
+
+#endif // !CONFIG_POSTPROC && !CONFIG_VP9_POSTPROC

@@ -12,6 +12,8 @@
 #define VPX_VP8_ENCODER_MR_DISSIM_H_
 #include "vpx_config.h"
 
+#if CONFIG_MULTI_RES_ENCODING
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -23,5 +25,5 @@ extern void vp8_store_drop_frame_info(VP8_COMP *cpi);
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // CONFIG_MULTI_RES_ENCODING
 #endif  // VPX_VP8_ENCODER_MR_DISSIM_H_

@@ -8,6 +8,9 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if HAVE_NEON
+
 #include <arm_neon.h>
 
 #include "vp8/encoder/denoising.h"
@@ -458,3 +461,5 @@ int vp8_denoiser_filter_uv_neon(unsigned char *mc_running_avg,
 
   return FILTER_BLOCK;
 }
+
+#endif // HAVE_NEON

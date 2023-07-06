@@ -8,6 +8,9 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if CONFIG_MULTI_RES_ENCODING
+
 #include <limits.h>
 #include "vpx_config.h"
 #include "onyx_int.h"
@@ -213,3 +216,5 @@ void vp8_store_drop_frame_info(VP8_COMP *cpi) {
     store_info->is_frame_dropped = 1;
   }
 }
+
+#endif // CONFIG_MULTI_RES_ENCODING

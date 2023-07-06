@@ -11,6 +11,9 @@
 #ifndef VPX_VPX_DSP_ARM_HIGHBD_IDCT_NEON_H_
 #define VPX_VPX_DSP_ARM_HIGHBD_IDCT_NEON_H_
 
+#include "./vpx_config.h"
+#if HAVE_NEON && CONFIG_VP9 && CONFIG_VP9_HIGHBITDEPTH
+
 #include <arm_neon.h>
 
 #include "./vpx_dsp_rtcd.h"
@@ -471,4 +474,5 @@ void vpx_highbd_idct16x16_256_add_half1d(const int32_t *input, int32_t *output,
                                          uint16_t *dest, const int stride,
                                          const int bd);
 
+#endif // HAVE_NEON && CONFIG_VP9 && CONFIG_VP9_HIGHBITDEPTH
 #endif  // VPX_VPX_DSP_ARM_HIGHBD_IDCT_NEON_H_

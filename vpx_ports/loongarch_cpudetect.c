@@ -11,6 +11,8 @@
  */
 
 #include "./vpx_config.h"
+#if VPX_ARCH_LOONGARCH
+
 #include "vpx_ports/loongarch.h"
 
 #define LOONGARCH_CFG2 0x02
@@ -38,3 +40,5 @@ int loongarch_cpu_caps(void) {
 #else /* end CONFIG_RUNTIME_CPU_DETECT */
 int loongarch_cpu_caps(void) { return 0; }
 #endif
+
+#endif // VPX_ARCH_LOONGARCH

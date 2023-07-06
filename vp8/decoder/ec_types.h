@@ -11,6 +11,8 @@
 #ifndef VPX_VP8_DECODER_EC_TYPES_H_
 #define VPX_VP8_DECODER_EC_TYPES_H_
 
+#if CONFIG_ERROR_CONCEALMENT
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -49,5 +51,5 @@ typedef struct {
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // CONFIG_ERROR_CONCEALMENT
 #endif  // VPX_VP8_DECODER_EC_TYPES_H_

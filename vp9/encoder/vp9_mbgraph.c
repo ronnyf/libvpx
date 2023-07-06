@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if !CONFIG_REALTIME_ONLY
+
 #include <limits.h>
 
 #include "./vp9_rtcd.h"
@@ -386,3 +390,5 @@ void vp9_update_mbgraph_stats(VP9_COMP *cpi) {
 
   separate_arf_mbs(cpi);
 }
+
+#endif // CONFIG_REALTIME_ONLY

@@ -8,11 +8,14 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vp9_rtcd.h"
+#include "./vpx_config.h"
+
+#if HAVE_NEON
+
 #include <arm_neon.h>
 #include <assert.h>
 
-#include "./vp9_rtcd.h"
-#include "./vpx_config.h"
 #include "vp9/common/vp9_common.h"
 #include "vp9/common/arm/neon/vp9_iht_neon.h"
 #include "vpx_dsp/arm/idct_neon.h"
@@ -277,3 +280,5 @@ void vp9_iht16x16_256_add_neon(const tran_low_t *input, uint8_t *dest,
   ht.cols(row_output, NULL, dest, stride, 0);               // left 8 columns
   ht.cols(row_output + 16 * 8, NULL, dest + 8, stride, 0);  // right 8 columns
 }
+
+#endif // HAVE_NEON

@@ -16,6 +16,9 @@
  * higher quality.
  */
 
+#include "./vpx_config.h"
+#if CONFIG_POSTPROC
+
 #include "./vp8_rtcd.h"
 #include "./vpx_dsp_rtcd.h"
 #include "vp8/common/common.h"
@@ -325,3 +328,5 @@ void vp8_multiframe_quality_enhance(VP8_COMMON *cm) {
     mode_info_context++; /* Skip border mb */
   }
 }
+
+#endif

@@ -8,6 +8,9 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if CONFIG_TEMPORAL_DENOISING
+
 #include <limits.h>
 
 #include "denoising.h"
@@ -723,3 +726,5 @@ void vp8_denoiser_denoise_mb(VP8_DENOISER *denoiser, MACROBLOCK *x,
     }
   }
 }
+
+#endif // CONFIG_TEMPORAL_DENOISING

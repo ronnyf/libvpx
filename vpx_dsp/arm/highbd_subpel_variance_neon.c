@@ -8,11 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
-#include <assert.h>
-
 #include "./vpx_dsp_rtcd.h"
 #include "./vpx_config.h"
+
+#if HAVE_NEON && CONFIG_VP9_HIGHBITDEPTH && !(CONFIG_ENCODERS || CONFIG_POSTPROC || CONFIG_VP9_POSTPROC)
+
+#include <arm_neon.h>
+#include <assert.h>
 
 #include "vpx/vpx_integer.h"
 #include "vpx_dsp/arm/mem_neon.h"
@@ -584,3 +586,5 @@ HBD_SPECIALIZED_SUBPEL_AVG_VARIANCE_WXH_NEON(12, 32, 64)
 
 HBD_SPECIALIZED_SUBPEL_AVG_VARIANCE_WXH_NEON(12, 64, 32)
 HBD_SPECIALIZED_SUBPEL_AVG_VARIANCE_WXH_NEON(12, 64, 64)
+
+#endif // HAVE_NEON && CONFIG_VP9_HIGHBITDEPTH && !(CONFIG_ENCODERS || CONFIG_POSTPROC || CONFIG_VP9_POSTPROC)

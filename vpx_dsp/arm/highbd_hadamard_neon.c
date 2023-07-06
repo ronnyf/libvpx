@@ -8,10 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
-
-#include "./vpx_dsp_rtcd.h"
 #include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#if HAVE_NEON && CONFIG_VP9 && CONFIG_VP9_HIGHBITDEPTH
+
+#include <arm_neon.h>
 
 #include "vpx_dsp/arm/mem_neon.h"
 #include "vpx_dsp/arm/transpose_neon.h"
@@ -213,3 +215,5 @@ void vpx_highbd_hadamard_32x32_neon(const int16_t *src_diff,
     store_s32q_to_tran_low(coeff + 4 * i + 768, c3);
   } while (++i < 64);
 }
+
+#endif // HAVE_NEON && CONFIG_VP9 && CONFIG_VP9_HIGHBITDEPTH

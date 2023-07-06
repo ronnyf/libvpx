@@ -8,6 +8,9 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if HAVE_NEON
+
 #include <arm_neon.h>
 
 #include "./vp8_rtcd.h"
@@ -293,3 +296,5 @@ void vp8_dequant_idct_add_uv_block_neon(short *q, short *dq,
       idct_dequant_0_2x_neon(q, dq[0], dst_v, stride);
   }
 }
+
+#endif // HAVE_NEON

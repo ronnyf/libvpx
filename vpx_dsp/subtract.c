@@ -13,6 +13,8 @@
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
 
+#if CONFIG_ENCODERS
+
 #include "vpx/vpx_integer.h"
 #include "vpx_ports/mem.h"
 
@@ -52,3 +54,5 @@ void vpx_highbd_subtract_block_c(int rows, int cols, int16_t *diff_ptr,
   }
 }
 #endif  // CONFIG_VP9_HIGHBITDEPTH
+
+#endif // CONFIG_ENCODERS

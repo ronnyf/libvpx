@@ -9,6 +9,7 @@
  */
 
 #include "vpx_config.h"
+#if CONFIG_MULTITHREAD
 #include "vp8_rtcd.h"
 #if !defined(_WIN32) && CONFIG_OS_SUPPORT == 1
 #include <unistd.h>
@@ -905,3 +906,5 @@ int vp8mt_decode_mb_rows(VP8D_COMP *pbi, MACROBLOCKD *xd) {
 
   return 0;
 }
+
+#endif // CONFIG_MULTITHREAD

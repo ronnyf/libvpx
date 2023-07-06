@@ -9,6 +9,9 @@
  */
 
 #include <assert.h>
+#include "./vpx_config.h"
+
+#if CONFIG_VP9_ENCODER
 
 #include "./vpx_dsp_rtcd.h"
 #include "vpx_dsp/quantize.h"
@@ -319,3 +322,5 @@ void vpx_highbd_quantize_b_32x32_c(
   *eob_ptr = eob + 1;
 }
 #endif
+
+#endif // CONFIG_VP9_ENCODER

@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if !CONFIG_REALTIME_ONLY
+
 #include <limits.h>
 #include <math.h>
 #include <stdio.h>
@@ -3913,3 +3917,5 @@ FIRSTPASS_STATS vp9_get_frame_stats(const TWO_PASS *twopass) {
 FIRSTPASS_STATS vp9_get_total_stats(const TWO_PASS *twopass) {
   return twopass->total_stats;
 }
+
+#endif // !CONFIG_REALTIME_ONLY

@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if HAVE_NEON
+
 #include <arm_neon.h>
 
 #include "./vp9_rtcd.h"
@@ -842,3 +846,5 @@ void vp9_scale_and_extend_frame_neon(const YV12_BUFFER_CONFIG *src,
     vp9_scale_and_extend_frame_c(src, dst, filter_type, phase_scaler);
   }
 }
+
+#endif // HAVE_NEON

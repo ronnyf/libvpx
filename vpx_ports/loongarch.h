@@ -13,6 +13,8 @@
 #ifndef VPX_VPX_PORTS_LOONGARCH_H_
 #define VPX_VPX_PORTS_LOONGARCH_H_
 
+#if VPX_ARCH_LOONGARCH
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -25,5 +27,5 @@ int loongarch_cpu_caps(void);
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // VPX_ARCH_LOONGARCH
 #endif  // VPX_VPX_PORTS_LOONGARCH_H_

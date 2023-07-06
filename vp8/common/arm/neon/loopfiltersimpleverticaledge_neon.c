@@ -8,11 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
-
 #include "./vpx_config.h"
 #include "./vp8_rtcd.h"
+
+#if HAVE_NEON
+
 #include "vpx_ports/arm.h"
+#include <arm_neon.h>
 
 #ifdef VPX_INCOMPATIBLE_GCC
 static INLINE void write_2x4(unsigned char *dst, int pitch,
@@ -272,3 +274,5 @@ void vp8_loop_filter_mbvs_neon(unsigned char *y_ptr, int y_stride,
   vp8_loop_filter_simple_vertical_edge_neon(y_ptr, y_stride, blimit);
   return;
 }
+
+#endif // HAVE_NEON

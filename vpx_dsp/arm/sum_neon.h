@@ -11,10 +11,12 @@
 #ifndef VPX_VPX_DSP_ARM_SUM_NEON_H_
 #define VPX_VPX_DSP_ARM_SUM_NEON_H_
 
-#include <arm_neon.h>
-
 #include "./vpx_config.h"
 #include "vpx/vpx_integer.h"
+
+#if HAVE_NEON
+
+#include <arm_neon.h>
 
 static INLINE uint16_t horizontal_add_uint8x4(const uint8x8_t a) {
 #if VPX_ARCH_AARCH64
@@ -221,3 +223,5 @@ static INLINE uint64_t horizontal_add_uint64x2(const uint64x2_t a) {
 }
 
 #endif  // VPX_VPX_DSP_ARM_SUM_NEON_H_
+
+#endif // HAVE_NEON

@@ -8,10 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
-
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if HAVE_NEON
+
+#include <arm_neon.h>
 #include "mem_neon.h"
 #include "sum_neon.h"
 #include "vpx/vpx_integer.h"
@@ -1940,3 +1942,4 @@ void vpx_tm_predictor_32x32_neon(uint8_t *dst, ptrdiff_t stride,
   }
 }
 #endif  // !HAVE_NEON_ASM
+#endif // 

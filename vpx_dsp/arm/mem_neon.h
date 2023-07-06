@@ -11,13 +11,16 @@
 #ifndef VPX_VPX_DSP_ARM_MEM_NEON_H_
 #define VPX_VPX_DSP_ARM_MEM_NEON_H_
 
+#include "./vpx_config.h"
+
+#if HAVE_NEON
+
+#include "vpx/vpx_integer.h"
+#include "vpx_dsp/vpx_dsp_common.h"
+
 #include <arm_neon.h>
 #include <assert.h>
 #include <string.h>
-
-#include "./vpx_config.h"
-#include "vpx/vpx_integer.h"
-#include "vpx_dsp/vpx_dsp_common.h"
 
 // Support for these xN intrinsics is lacking in older versions of GCC.
 #if defined(__GNUC__) && !defined(__clang__)
@@ -460,4 +463,5 @@ static INLINE void load_u16_8x8(const uint16_t *s, const ptrdiff_t p,
   *s7 = vld1q_u16(s);
 }
 
+#endif // HAVE_NEON
 #endif  // VPX_VPX_DSP_ARM_MEM_NEON_H_

@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if HAVE_NEON && CONFIG_VP9 && CONFIG_VP9_HIGHBITDEPTH
+
 #include <arm_neon.h>
 
 #include "./vpx_dsp_rtcd.h"
@@ -111,3 +115,5 @@ void vpx_highbd_convolve_copy_neon(const uint16_t *src, ptrdiff_t src_stride,
     } while (--h != 0);
   }
 }
+
+#endif // HAVE_NEON && CONFIG_VP9 && CONFIG_VP9_HIGHBITDEPTH

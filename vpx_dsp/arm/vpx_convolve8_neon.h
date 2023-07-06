@@ -11,11 +11,13 @@
 #ifndef VPX_VPX_DSP_ARM_VPX_CONVOLVE8_NEON_H_
 #define VPX_VPX_DSP_ARM_VPX_CONVOLVE8_NEON_H_
 
-#include <arm_neon.h>
-
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if HAVE_NEON
+
 #include "vpx_dsp/vpx_filter.h"
+#include <arm_neon.h>
 
 #if VPX_ARCH_AARCH64 && \
     (defined(__ARM_FEATURE_DOTPROD) || defined(__ARM_FEATURE_MATMUL_INT8))
@@ -268,4 +270,5 @@ static INLINE uint8x8_t scale_filter_8(const uint8x8_t *const s,
                      filters);
 }
 
+#endif // HAVE_NEON
 #endif  // VPX_VPX_DSP_ARM_VPX_CONVOLVE8_NEON_H_

@@ -8,6 +8,9 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if HAVE_NEON
+
 #include <arm_neon.h>
 
 #include "./vp8_rtcd.h"
@@ -119,3 +122,5 @@ void vp8_short_walsh4x4_neon(int16_t *input, int16_t *output, int pitch) {
   return;
 }
 #endif  // VPX_INCOMPATIBLE_GCC
+
+#endif // HAVE_NEON

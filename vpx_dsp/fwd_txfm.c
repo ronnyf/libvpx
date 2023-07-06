@@ -8,6 +8,9 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if CONFIG_VP9_ENCODER
+
 #include <assert.h>
 #include "./vpx_dsp_rtcd.h"
 #include "vpx_dsp/fwd_txfm.h"
@@ -807,3 +810,5 @@ void vpx_highbd_fdct32x32_1_c(const int16_t *input, tran_low_t *output,
   vpx_fdct32x32_1_c(input, output, stride);
 }
 #endif  // CONFIG_VP9_HIGHBITDEPTH
+
+#endif // CONFIG_VP9_ENCODER

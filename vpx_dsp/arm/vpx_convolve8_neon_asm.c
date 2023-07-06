@@ -8,6 +8,9 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if HAVE_NEON_ASM
+
 #include "./vpx_dsp_rtcd.h"
 #include "vp9/common/vp9_filter.h"
 #include "vpx_dsp/arm/vpx_convolve8_neon_asm.h"
@@ -39,3 +42,5 @@ DEFINE_FILTER(horiz)
 DEFINE_FILTER(avg_horiz)
 DEFINE_FILTER(vert)
 DEFINE_FILTER(avg_vert)
+
+#endif // HAVE_NEON_ASM

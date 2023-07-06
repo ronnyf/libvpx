@@ -10,13 +10,17 @@
  *  This code was originally written by: Gregory Maxwell, at the Daala
  *  project.
  */
+
+#include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#if CONFIG_ENCODERS
+
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
-#include "./vpx_config.h"
-#include "./vpx_dsp_rtcd.h"
 #include "vpx_dsp/ssim.h"
 #include "vpx_ports/system_state.h"
 #include "vpx_dsp/psnr.h"
@@ -279,3 +283,5 @@ double vpx_psnrhvs(const YV12_BUFFER_CONFIG *src,
   psnrhvs = (*y_psnrhvs) * .8 + .1 * ((*u_psnrhvs) + (*v_psnrhvs));
   return convert_score_db(psnrhvs, 1.0, in_bd);
 }
+
+#endif // CONFIG_ENCODERS

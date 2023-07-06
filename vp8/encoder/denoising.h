@@ -11,6 +11,9 @@
 #ifndef VPX_VP8_ENCODER_DENOISING_H_
 #define VPX_VP8_ENCODER_DENOISING_H_
 
+#include "./vpx_config.h"
+#if CONFIG_TEMPORAL_DENOISING
+
 #include "block.h"
 #include "vp8/common/loopfilter.h"
 
@@ -99,5 +102,5 @@ void vp8_denoiser_denoise_mb(VP8_DENOISER *denoiser, MACROBLOCK *x,
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // CONFIG_TEMPORAL_DENOISING
 #endif  // VPX_VP8_ENCODER_DENOISING_H_

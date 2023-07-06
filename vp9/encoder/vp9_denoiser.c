@@ -8,6 +8,9 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if CONFIG_VP9_TEMPORAL_DENOISING
+
 #include <assert.h>
 #include <limits.h>
 #include <math.h>
@@ -837,3 +840,5 @@ static void make_grayscale(YV12_BUFFER_CONFIG *yuv) {
   }
 }
 #endif
+
+#endif // CONFIG_VP9_TEMPORAL_DENOISING

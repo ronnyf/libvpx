@@ -8,6 +8,9 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if HAVE_NEON && CONFIG_VP9 && CONFIG_VP9_HIGHBITDEPTH
+
 #include <arm_neon.h>
 
 #include "./vpx_config.h"
@@ -638,3 +641,5 @@ void vpx_highbd_idct32x32_1024_add_neon(const tran_low_t *input, uint16_t *dest,
     vpx_highbd_idct32_32_neon(input, dest, stride, bd);
   }
 }
+
+#endif // HAVE_NEON && CONFIG_VP9 && CONFIG_VP9_HIGHBITDEPTH

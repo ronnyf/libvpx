@@ -11,6 +11,8 @@
 #ifndef VPX_VP8_DECODER_ERROR_CONCEALMENT_H_
 #define VPX_VP8_DECODER_ERROR_CONCEALMENT_H_
 
+#if CONFIG_ERROR_CONCEALMENT
+
 #include "onyxd_int.h"
 #include "ec_types.h"
 
@@ -37,5 +39,5 @@ void vp8_interpolate_motion(MACROBLOCKD *mb, int mb_row, int mb_col,
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // CONFIG_ERROR_CONCEALMENT
 #endif  // VPX_VP8_DECODER_ERROR_CONCEALMENT_H_

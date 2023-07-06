@@ -8,6 +8,9 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if !CONFIG_REALTIME_ONLY
+
 #include "vp8/common/onyxc_int.h"
 #include "onyx_int.h"
 #include "vp8/common/systemdependent.h"
@@ -432,3 +435,5 @@ void vp8_temporal_filter_prepare_c(VP8_COMP *cpi, int distance) {
                                 strength);
 }
 #endif
+
+#endif // !CONFIG_REALTIME_ONLY

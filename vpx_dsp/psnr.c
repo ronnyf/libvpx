@@ -8,6 +8,9 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if CONFIG_ENCODERS
+
 #include <math.h>
 #include <assert.h>
 #include "./vpx_dsp_rtcd.h"
@@ -260,3 +263,5 @@ void vpx_calc_psnr(const YV12_BUFFER_CONFIG *a, const YV12_BUFFER_CONFIG *b,
   psnr->psnr[0] =
       vpx_sse_to_psnr((double)total_samples, peak, (double)total_sse);
 }
+
+#endif // CONFIG_ENCODERS

@@ -11,6 +11,8 @@
 #ifndef VPX_VP9_COMMON_VP9_POSTPROC_H_
 #define VPX_VP9_COMMON_VP9_POSTPROC_H_
 
+#if CONFIG_VP9_POSTPROC
+
 #include "vpx_ports/mem.h"
 #include "vpx_scale/yv12config.h"
 #include "vp9/common/vp9_blockd.h"
@@ -49,5 +51,5 @@ void vp9_deblock(struct VP9Common *cm, const YV12_BUFFER_CONFIG *src,
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // CONFIG_VP9_POSTPROC && CONFIG_INTERNAL_STATS
 #endif  // VPX_VP9_COMMON_VP9_POSTPROC_H_

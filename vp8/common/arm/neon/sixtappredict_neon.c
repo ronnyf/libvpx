@@ -8,10 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
-#include <string.h>
 #include "./vpx_config.h"
 #include "./vp8_rtcd.h"
+
+#if HAVE_NEON
+
+#include <arm_neon.h>
+#include <string.h>
 #include "vpx_dsp/arm/mem_neon.h"
 #include "vpx_ports/mem.h"
 
@@ -1727,3 +1730,5 @@ void vp8_sixtap_predict16x16_neon(unsigned char *src_ptr,
     }
   }
 }
+
+#endif // HAVE_NEON

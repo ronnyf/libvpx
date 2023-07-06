@@ -11,6 +11,8 @@
 #ifndef VPX_VP8_COMMON_ARM_LOOPFILTER_ARM_H_
 #define VPX_VP8_COMMON_ARM_LOOPFILTER_ARM_H_
 
+#if HAVE_NEON
+
 typedef void loopfilter_y_neon(unsigned char *src, int pitch,
                                unsigned char blimit, unsigned char limit,
                                unsigned char thresh);
@@ -28,4 +30,5 @@ loopfilter_y_neon vp8_mbloop_filter_vertical_edge_y_neon;
 loopfilter_uv_neon vp8_mbloop_filter_horizontal_edge_uv_neon;
 loopfilter_uv_neon vp8_mbloop_filter_vertical_edge_uv_neon;
 
+#endif // HAVE_NEON
 #endif  // VPX_VP8_COMMON_ARM_LOOPFILTER_ARM_H_

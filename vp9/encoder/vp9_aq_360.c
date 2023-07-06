@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if !CONFIG_REALTIME_ONLY
+
 #include <math.h>
 
 #include "vpx_ports/mem.h"
@@ -73,3 +77,5 @@ void vp9_360aq_frame_setup(VP9_COMP *cpi) {
     }
   }
 }
+
+#endif // !CONFIG_REALTIME_ONLY

@@ -8,11 +8,14 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vp9_rtcd.h"
+#include "./vpx_config.h"
+
+#if HAVE_NEON && CONFIG_VP9_HIGHBITDEPTH && !CONFIG_REALTIME_ONLY
+
 #include <assert.h>
 #include <arm_neon.h>
 
-#include "./vp9_rtcd.h"
-#include "./vpx_config.h"
 #include "vpx/vpx_integer.h"
 #include "vp9/encoder/vp9_encoder.h"
 #include "vp9/encoder/vp9_temporal_filter.h"
@@ -870,3 +873,5 @@ void vp9_highbd_apply_temporal_filter_neon(
       strength, blk_fw, use_whole_blk, u_accum, u_count, v_accum, v_count,
       y_dist_ptr, u_dist_ptr, v_dist_ptr);
 }
+
+#endif // HAVE_NEON && CONFIG_VP9_HIGHBITDEPTH && !CONFIG_REALTIME_ONLY

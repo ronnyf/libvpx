@@ -8,11 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
-#include <assert.h>
-
 #include "./vpx_dsp_rtcd.h"
 #include "./vpx_config.h"
+
+#if HAVE_NEON && !(CONFIG_ENCODERS || CONFIG_POSTPROC || CONFIG_VP9_POSTPROC)
+
+#include <arm_neon.h>
+#include <assert.h>
 
 #include "vpx/vpx_integer.h"
 #include "vpx_dsp/arm/mem_neon.h"
@@ -550,3 +552,5 @@ VPX_MSE_WXH_NEON(8, 8)
 VPX_MSE_WXH_NEON(8, 16)
 VPX_MSE_WXH_NEON(16, 8)
 VPX_MSE_WXH_NEON(16, 16)
+
+#endif // HAVE_NEON && !(CONFIG_ENCODERS || CONFIG_POSTPROC || CONFIG_VP9_POSTPROC)

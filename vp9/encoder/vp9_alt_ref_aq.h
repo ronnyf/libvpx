@@ -18,6 +18,10 @@
 #ifndef VPX_VP9_ENCODER_VP9_ALT_REF_AQ_H_
 #define VPX_VP9_ENCODER_VP9_ALT_REF_AQ_H_
 
+#include "./vpx_config.h"
+
+#if !CONFIG_REALTIME_ONLY
+
 #include "vpx/vpx_integer.h"
 
 // Where to disable segmentation
@@ -123,5 +127,5 @@ void vp9_alt_ref_aq_destroy(struct ALT_REF_AQ *const self);
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // !CONFIG_REALTIME_ONLY
 #endif  // VPX_VP9_ENCODER_VP9_ALT_REF_AQ_H_

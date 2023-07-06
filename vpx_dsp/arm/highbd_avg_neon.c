@@ -8,10 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
-
 #include "./vpx_dsp_rtcd.h"
 #include "./vpx_config.h"
+
+#if HAVE_NEON && CONFIG_VP9_HIGHBITDEPTH && CONFIG_VP9_ENCODER
+
+#include <arm_neon.h>
 
 #include "vpx_dsp/arm/mem_neon.h"
 #include "vpx_dsp/arm/sum_neon.h"
@@ -138,3 +140,5 @@ void vpx_highbd_minmax_8x8_neon(const uint8_t *s8, int p, const uint8_t *d8,
   vst1_lane_u16((uint16_t *)min, ab_min, 0);
 #endif
 }
+
+#endif // HAVE_NEON && CONFIG_VP9_HIGHBITDEPTH && CONFIG_VP9_ENCODER

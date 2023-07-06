@@ -10,6 +10,7 @@
 #include <stdlib.h>
 
 #include "./vpx_config.h"
+#if CONFIG_DECODERS
 
 #include "vpx_dsp/bitreader.h"
 #include "vpx_dsp/prob.h"
@@ -98,3 +99,5 @@ const uint8_t *vpx_reader_find_end(vpx_reader *r) {
   }
   return r->buffer;
 }
+
+#endif // CONFIG_DECODERS

@@ -8,10 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
-
 #include "./vpx_config.h"
 #include "./vp8_rtcd.h"
+
+#if HAVE_NEON
+
+#include <arm_neon.h>
 
 static INLINE void vp8_loop_filter_simple_horizontal_edge_neon(
     unsigned char *s, int p, const unsigned char *blimit) {
@@ -104,3 +106,5 @@ void vp8_loop_filter_mbhs_neon(unsigned char *y_ptr, int y_stride,
   vp8_loop_filter_simple_horizontal_edge_neon(y_ptr, y_stride, blimit);
   return;
 }
+
+#endif // HAVE_NEON

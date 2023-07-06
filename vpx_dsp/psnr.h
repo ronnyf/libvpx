@@ -14,6 +14,8 @@
 #include "vpx_scale/yv12config.h"
 #include "vpx/vpx_encoder.h"
 
+#if CONFIG_ENCODERS
+
 #define MAX_PSNR 100.0
 
 #ifdef __cplusplus
@@ -51,4 +53,5 @@ double vpx_psnrhvs(const YV12_BUFFER_CONFIG *source,
 #ifdef __cplusplus
 }  // extern "C"
 #endif
+#endif // CONFIG_ENCODERS
 #endif  // VPX_VPX_DSP_PSNR_H_

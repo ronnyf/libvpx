@@ -1,6 +1,6 @@
-*.S
+#*.S
 *.a
-*.asm.s
+#*.asm.s
 *.d
 *.gcda
 *.gcno
@@ -69,3 +69,7 @@
 /vpxenc
 /vpxenc.dox
 TAGS
+xcuserdata/
+.DS_Store
+/build
+!/build/make

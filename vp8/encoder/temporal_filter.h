@@ -11,6 +11,8 @@
 #ifndef VPX_VP8_ENCODER_TEMPORAL_FILTER_H_
 #define VPX_VP8_ENCODER_TEMPORAL_FILTER_H_
 
+#if !CONFIG_REALTIME_ONLY
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -22,5 +24,5 @@ void vp8_temporal_filter_prepare_c(struct VP8_COMP *cpi, int distance);
 #ifdef __cplusplus
 }
 #endif
-
+#endif // !CONFIG_REALTIME_ONLY
 #endif  // VPX_VP8_ENCODER_TEMPORAL_FILTER_H_

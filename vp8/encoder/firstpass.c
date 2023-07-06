@@ -8,6 +8,9 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if !CONFIG_REALTIME_ONLY
+
 #include <math.h>
 #include <limits.h>
 #include <stdio.h>
@@ -3142,3 +3145,5 @@ static void find_next_key_frame(VP8_COMP *cpi, FIRSTPASS_STATS *this_frame) {
     }
   }
 }
+
+#endif // CONFIG_REALTIME_ONLY

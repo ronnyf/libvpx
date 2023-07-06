@@ -11,6 +11,8 @@
 #ifndef VPX_VP9_ENCODER_VP9_NON_GREEDY_MV_H_
 #define VPX_VP9_ENCODER_VP9_NON_GREEDY_MV_H_
 
+#if CONFIG_NON_GREEDY_MV
+
 #include "vp9/common/vp9_enums.h"
 #include "vp9/common/vp9_blockd.h"
 #include "vpx_scale/yv12config.h"
@@ -126,4 +128,5 @@ int vp9_motion_field_is_mv_set(const MotionField *motion_field, int brow,
 #ifdef __cplusplus
 }  // extern "C"
 #endif
+#endif // CONFIG_NON_GREEDY_MV
 #endif  // VPX_VP9_ENCODER_VP9_NON_GREEDY_MV_H_

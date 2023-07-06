@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if HAVE_NEON
+
 #include <arm_neon.h>
 #include <assert.h>
 
@@ -100,3 +104,5 @@ int64_t vp9_block_error_fp_neon(const tran_low_t *coeff,
 
   return horizontal_add_uint64x2(vaddq_u64(err_u64[0], err_u64[1]));
 }
+
+#endif // HAVE_NEON

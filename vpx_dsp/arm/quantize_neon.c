@@ -8,10 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if HAVE_NEON && CONFIG_VP9_ENCODER
+
 #include <arm_neon.h>
 #include <assert.h>
 
-#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
 #include "vpx_dsp/arm/mem_neon.h"
 #include "vp9/common/vp9_scan.h"
@@ -288,3 +290,5 @@ void vpx_quantize_b_32x32_neon(const tran_low_t *coeff_ptr,
   }
 #endif  // VPX_ARCH_AARCH64
 }
+
+#endif // CONFIG_VP9_ENCODER

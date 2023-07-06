@@ -14,6 +14,8 @@
 #include "./vpx_config.h"
 #include "vpx_ports/arm.h"
 
+#if VPX_ARCH_ARM
+
 #ifdef WINAPI_FAMILY
 #include <winapifamily.h>
 #if !WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP)
@@ -152,3 +154,5 @@ int arm_cpu_caps(void) {
     "--enable-runtime-cpu-detect selected, but no CPU detection method " \
 "available for your platform. Reconfigure with --disable-runtime-cpu-detect."
 #endif
+
+#endif // VPX_ARCH_ARM

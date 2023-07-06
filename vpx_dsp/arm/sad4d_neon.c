@@ -8,11 +8,14 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
-
-#include <assert.h>
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if HAVE_NEON && CONFIG_ENCODERS
+
+#include <arm_neon.h>
+#include <assert.h>
+
 #include "vpx/vpx_integer.h"
 #include "vpx_dsp/arm/mem_neon.h"
 #include "vpx_dsp/arm/sum_neon.h"
@@ -342,3 +345,5 @@ SAD_SKIP_WXH_4D_NEON(64, 32)
 SAD_SKIP_WXH_4D_NEON(64, 64)
 
 #undef SAD_SKIP_WXH_4D_NEON
+
+#endif // HAVE_NEON && CONFIG_ENCODERS

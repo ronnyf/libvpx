@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if CONFIG_VP9_ENCODER && CONFIG_RATE_CTRL
+
 #include <memory>
 #include <vector>
 #include "./ivfenc.h"
@@ -1330,3 +1334,5 @@ SimpleEncode::~SimpleEncode() {
 }
 
 }  // namespace vp9
+
+#endif // CONFIG_VP9_ENCODER && CONFIG_RATE_CTRL

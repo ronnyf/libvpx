@@ -11,10 +11,13 @@
 #ifndef VPX_VP9_COMMON_ARM_NEON_VP9_IHT_NEON_H_
 #define VPX_VP9_COMMON_ARM_NEON_VP9_IHT_NEON_H_
 
-#include <arm_neon.h>
-
 #include "./vp9_rtcd.h"
 #include "./vpx_config.h"
+
+#if HAVE_NEON
+
+#include <arm_neon.h>
+
 #include "vp9/common/vp9_common.h"
 #include "vpx_dsp/arm/idct_neon.h"
 #include "vpx_dsp/arm/mem_neon.h"
@@ -269,4 +272,5 @@ typedef struct {
   iht_1d cols, rows;  // vertical and horizontal
 } iht_2d;
 
+#endif // HAVE_NEON
 #endif  // VPX_VP9_COMMON_ARM_NEON_VP9_IHT_NEON_H_

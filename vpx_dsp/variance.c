@@ -11,6 +11,8 @@
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
 
+#if !(CONFIG_ENCODERS || CONFIG_POSTPROC || CONFIG_VP9_POSTPROC)
+
 #include "vpx_ports/mem.h"
 #include "vpx/vpx_integer.h"
 
@@ -564,3 +566,5 @@ void vpx_highbd_comp_avg_pred_c(uint16_t *comp_pred, const uint16_t *pred,
   }
 }
 #endif  // CONFIG_VP9_HIGHBITDEPTH
+
+#endif // !(CONFIG_ENCODERS || CONFIG_POSTPROC || CONFIG_VP9_POSTPROC)

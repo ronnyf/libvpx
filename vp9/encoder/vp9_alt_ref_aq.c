@@ -8,6 +8,10 @@
  *  the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if !CONFIG_REALTIME_ONLY
+
 #include "vp9/encoder/vp9_encoder.h"
 #include "vp9/encoder/vp9_alt_ref_aq.h"
 
@@ -61,3 +65,5 @@ int vp9_alt_ref_aq_disable_if(const struct ALT_REF_AQ *self,
 
   return 0;
 }
+
+#endif // !CONFIG_REALTIME_ONLY

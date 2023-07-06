@@ -8,9 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <assert.h>
+#include "./vpx_config.h"
+#if CONFIG_ENCODERS
 
+#include <assert.h>
 #include "./bitwriter.h"
+
 
 #if CONFIG_BITSTREAM_DEBUG
 #include "vpx_util/vpx_debug_util.h"
@@ -40,3 +43,5 @@ void vpx_stop_encode(vpx_writer *br) {
   bitstream_queue_set_skip_write(0);
 #endif
 }
+
+#endif // CONFIG_ENCODERS

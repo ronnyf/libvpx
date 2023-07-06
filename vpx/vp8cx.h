@@ -10,6 +10,10 @@
 #ifndef VPX_VPX_VP8CX_H_
 #define VPX_VPX_VP8CX_H_
 
+#include "libvpx_config/vpx_config.h"
+
+#if CONFIG_VP8_ENCODER
+
 /*!\defgroup vp8_encoder WebM VP8/VP9 Encoder
  * \ingroup vp8
  *
@@ -1117,5 +1121,5 @@ VPX_CTRL_USE_TYPE(VP9E_GET_TPL_STATS, void *)
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // CONFIG_VP8_ENCODER
 #endif  // VPX_VPX_VP8CX_H_

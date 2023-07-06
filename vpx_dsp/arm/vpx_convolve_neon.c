@@ -10,6 +10,9 @@
 
 #include <assert.h>
 
+#include "./vpx_config.h"
+#if HAVE_NEON
+
 #include "./vpx_dsp_rtcd.h"
 #include "vpx_dsp/vpx_dsp_common.h"
 #include "vpx_ports/mem.h"
@@ -118,3 +121,5 @@ void vpx_convolve8_avg_neon(const uint8_t *src, ptrdiff_t src_stride,
 #endif  // #if VPX_ARCH_AARCH64 &&
         //     (defined(__ARM_FEATURE_DOTPROD) ||
         //      defined(__ARM_FEATURE_MATMUL_INT8))
+
+#endif // HAVE_NEON

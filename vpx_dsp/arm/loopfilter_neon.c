@@ -8,9 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if HAVE_NEON && !HAVE_NEON_ASM
+
+#include <arm_neon.h>
 #include "vpx_dsp/arm/transpose_neon.h"
 
 // For all the static inline functions, the functions ending with '_8' process
@@ -1105,3 +1108,5 @@ void vpx_lpf_vertical_16_dual_neon(uint8_t *s, int p, const uint8_t *blimit,
 #if defined(__GNUC__) && __GNUC__ >= 4 && !defined(__clang__)
 #pragma GCC diagnostic pop
 #endif
+
+#endif // HAVE_NEON && !HAVE_NEON_ASM

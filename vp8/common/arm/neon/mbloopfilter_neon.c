@@ -8,9 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
-
 #include "./vpx_config.h"
+#if HAVE_NEON
+
+#include <arm_neon.h>
 #include "vp8/common/arm/loopfilter_arm.h"
 
 static INLINE void vp8_mbloop_filter_neon(uint8x16_t qblimit,  // mblimit
@@ -611,3 +612,5 @@ void vp8_mbloop_filter_vertical_edge_uv_neon(unsigned char *u, int pitch,
   vst1_u8(vd, vget_high_u8(q10));
   return;
 }
+
+#endif // HAVE_NEON

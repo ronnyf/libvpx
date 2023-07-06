@@ -8,10 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
-
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if HAVE_NEON && CONFIG_VP9 && CONFIG_VP9_HIGHBITDEPTH
+
+#include <arm_neon.h>
 #include "sum_neon.h"
 #include "vpx/vpx_integer.h"
 
@@ -2512,3 +2514,5 @@ void vpx_highbd_tm_predictor_32x32_neon(uint16_t *dst, ptrdiff_t stride,
     }
   }
 }
+
+#endif // HAVE_NEON && CONFIG_VP9 && CONFIG_VP9_HIGHBITDEPTH

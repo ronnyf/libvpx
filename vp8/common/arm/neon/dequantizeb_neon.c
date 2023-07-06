@@ -8,6 +8,9 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if HAVE_NEON
+
 #include <arm_neon.h>
 
 #include "./vp8_rtcd.h"
@@ -24,3 +27,5 @@ void vp8_dequantize_b_neon(BLOCKD *d, short *DQC) {
 
   vst2q_s16(d->dqcoeff, qDQ);
 }
+
+#endif // HAVE_NEON

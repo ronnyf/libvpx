@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if HAVE_NEON && CONFIG_VP9_HIGHBITDEPTH
+
 #include <arm_neon.h>
 #include <assert.h>
 
@@ -47,3 +51,5 @@ int64_t vp9_highbd_block_error_neon(const tran_low_t *coeff,
   *ssz = (horizontal_add_int64x2(ssz_s64) + rounding) >> shift;
   return ((int64_t)horizontal_add_uint64x2(err_u64) + rounding) >> shift;
 }
+
+#endif // HAVE_NEON && CONFIG_VP9_HIGHBITDEPTH

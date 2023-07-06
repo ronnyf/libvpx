@@ -10,6 +10,8 @@
 #include "./vpx_config.h"
 #include "./bitreader_buffer.h"
 
+#if CONFIG_DECODERS
+
 size_t vpx_rb_bytes_read(struct vpx_read_bit_buffer *rb) {
   return (rb->bit_offset + 7) >> 3;
 }
@@ -42,3 +44,5 @@ int vpx_rb_read_signed_literal(struct vpx_read_bit_buffer *rb, int bits) {
 int vpx_rb_read_inv_signed_literal(struct vpx_read_bit_buffer *rb, int bits) {
   return vpx_rb_read_signed_literal(rb, bits);
 }
+
+#endif // CONFIG_DECODERS

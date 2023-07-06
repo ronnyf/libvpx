@@ -8,10 +8,14 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_dsp_rtcd.h"
+#include "./vpx_config.h"
+
+#if HAVE_NEON && CONFIG_ENCODERS
+
 #include <arm_neon.h>
 #include <assert.h>
 
-#include "./vpx_dsp_rtcd.h"
 #include "vpx_dsp/arm/sum_neon.h"
 
 uint64_t vpx_sum_squares_2d_i16_neon(const int16_t *src, int stride, int size) {
@@ -98,3 +102,5 @@ uint64_t vpx_sum_squares_2d_i16_neon(const int16_t *src, int stride, int size) {
     return horizontal_add_uint64x2(sum_u64);
   }
 }
+
+#endif // HAVE_NEON && CONFIG_ENCODERS

@@ -13,6 +13,10 @@
 #include "./vpx_config.h"
 #include "vpx/vpx_integer.h"
 
+#if CONFIG_VP9
+
+#include "vpx_dsp/vpx_filter.h"
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -34,5 +38,5 @@ typedef void (*highbd_convolve_fn_t)(const uint16_t *src, ptrdiff_t src_stride,
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // CONFIG_VP9
 #endif  // VPX_VPX_DSP_VPX_CONVOLVE_H_

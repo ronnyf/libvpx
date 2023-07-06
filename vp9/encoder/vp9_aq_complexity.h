@@ -11,6 +11,10 @@
 #ifndef VPX_VP9_ENCODER_VP9_AQ_COMPLEXITY_H_
 #define VPX_VP9_ENCODER_VP9_AQ_COMPLEXITY_H_
 
+#include "./vpx_config.h"
+
+#if !CONFIG_REALTIME_ONLY
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -32,5 +36,5 @@ void vp9_setup_in_frame_q_adj(struct VP9_COMP *cpi);
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // !CONFIG_REALTIME_ONLY
 #endif  // VPX_VP9_ENCODER_VP9_AQ_COMPLEXITY_H_

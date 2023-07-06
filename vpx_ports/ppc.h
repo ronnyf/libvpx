@@ -13,6 +13,7 @@
 #include <stdlib.h>
 
 #include "./vpx_config.h"
+#if VPX_ARCH_PPC
 
 #ifdef __cplusplus
 extern "C" {
@@ -25,5 +26,5 @@ int ppc_simd_caps(void);
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // VPX_ARCH_PPC
 #endif  // VPX_VPX_PORTS_PPC_H_

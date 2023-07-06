@@ -8,6 +8,9 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if HAVE_NEON && !(CONFIG_ENCODERS || CONFIG_POSTPROC || CONFIG_VP9_POSTPROC)
+
 #include <arm_neon.h>
 #include <assert.h>
 
@@ -63,3 +66,5 @@ void vpx_comp_avg_pred_neon(uint8_t *comp, const uint8_t *pred, int width,
     } while (i);
   }
 }
+
+#endif // HAVE_NEON && !(CONFIG_ENCODERS || CONFIG_POSTPROC || CONFIG_VP9_POSTPROC)

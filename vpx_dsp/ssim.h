@@ -11,6 +11,8 @@
 #ifndef VPX_VPX_DSP_SSIM_H_
 #define VPX_VPX_DSP_SSIM_H_
 
+#if CONFIG_ENCODERS
+
 #define MAX_SSIM_DB 100.0;
 
 #ifdef __cplusplus
@@ -83,5 +85,5 @@ double vpx_highbd_calc_ssim(const YV12_BUFFER_CONFIG *source,
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // CONFIG_ENCODERS
 #endif  // VPX_VPX_DSP_SSIM_H_

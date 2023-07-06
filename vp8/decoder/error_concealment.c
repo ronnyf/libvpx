@@ -8,6 +8,8 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#if CONFIG_ERROR_CONCEALMENT
+
 #include <assert.h>
 
 #include "error_concealment.h"
@@ -480,3 +482,5 @@ void vp8_interpolate_motion(MACROBLOCKD *mb, int mb_row, int mb_col,
   mb->mode_info_context->mbmi.partitioning = 3;
   mb->mode_info_context->mbmi.segment_id = 0;
 }
+
+#endif // CONFIG_ERROR_CONCEALMENT

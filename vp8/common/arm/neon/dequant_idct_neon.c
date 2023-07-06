@@ -8,6 +8,9 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if HAVE_NEON
+
 #include <arm_neon.h>
 
 #include "./vp8_rtcd.h"
@@ -139,3 +142,5 @@ void vp8_dequant_idct_add_neon(int16_t *input, int16_t *dq, unsigned char *dst,
   vst1_lane_s32((int32_t *)dst0, d15, 1);
   return;
 }
+
+#endif // HAVE_NEON

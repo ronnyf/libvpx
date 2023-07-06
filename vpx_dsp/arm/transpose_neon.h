@@ -11,9 +11,11 @@
 #ifndef VPX_VPX_DSP_ARM_TRANSPOSE_NEON_H_
 #define VPX_VPX_DSP_ARM_TRANSPOSE_NEON_H_
 
-#include <arm_neon.h>
-
 #include "./vpx_config.h"
+
+#if HAVE_NEON
+
+#include <arm_neon.h>
 
 // Transpose 64 bit elements as follows:
 // a0: 00 01 02 03 04 05 06 07
@@ -1543,4 +1545,6 @@ static INLINE void load_and_transpose_s32_8x8(
 
   transpose_s32_8x8(a0, a1, a2, a3, a4, a5, a6, a7);
 }
+
+#endif // HAVE_NEON
 #endif  // VPX_VPX_DSP_ARM_TRANSPOSE_NEON_H_

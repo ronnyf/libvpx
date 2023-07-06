@@ -8,10 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
 #include "./vpx_dsp_rtcd.h"
 #include "./vpx_config.h"
 
+#if HAVE_NEON && !(CONFIG_ENCODERS || CONFIG_POSTPROC || CONFIG_VP9_POSTPROC)
+
+#include <arm_neon.h>
 #include "vpx/vpx_integer.h"
 
 #include "vpx_dsp/variance.h"
@@ -488,3 +490,5 @@ SPECIALIZED_SUBPEL_AVG_VARIANCE_WXH_NEON(32, 64, 1)
 
 SPECIALIZED_SUBPEL_AVG_VARIANCE_WXH_NEON(64, 32, 1)
 SPECIALIZED_SUBPEL_AVG_VARIANCE_WXH_NEON(64, 64, 1)
+
+#endif // HAVE_NEON && !(CONFIG_ENCODERS || CONFIG_POSTPROC || CONFIG_VP9_POSTPROC)

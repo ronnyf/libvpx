@@ -8,6 +8,9 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if HAVE_NEON && CONFIG_VP9 && CONFIG_VP9_HIGHBITDEPTH
+
 #include "./vpx_dsp_rtcd.h"
 #include "vpx_dsp/vpx_dsp_common.h"
 #include "vpx_dsp/vpx_filter.h"
@@ -56,3 +59,5 @@ void vpx_highbd_convolve8_avg_neon(const uint16_t *src, ptrdiff_t src_stride,
                                      x0_q4, x_step_q4, y0_q4, y_step_q4, w, h,
                                      bd);
 }
+
+#endif // HAVE_NEON && CONFIG_VP9 && CONFIG_VP9_HIGHBITDEPTH

@@ -7,9 +7,13 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
+
+#include "./vpx_config.h"
+#if VPX_ARCH_MIPS
+
 #include <stdio.h>
 #include <string.h>
-#include "./vpx_config.h"
+
 #include "vpx_ports/mips.h"
 
 #if CONFIG_RUNTIME_CPU_DETECT
@@ -55,3 +59,5 @@ int mips_cpu_caps(void) {
 #else /* end CONFIG_RUNTIME_CPU_DETECT */
 int mips_cpu_caps(void) { return 0; }
 #endif
+
+#endif // VPX_ARCH_MIPS

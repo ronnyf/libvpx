@@ -30,6 +30,10 @@
 #ifndef VPX_VPX_VP8_H_
 #define VPX_VPX_VP8_H_
 
+#include "libvpx_config/vpx_config.h"
+
+#if CONFIG_VP8_ENCODER
+
 #include "./vpx_codec.h"
 #include "./vpx_image.h"
 
@@ -132,5 +136,5 @@ VPX_CTRL_USE_TYPE(VP9_GET_REFERENCE, vp9_ref_frame_t *)
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // CONFIG_VP8_ENCODER
 #endif  // VPX_VPX_VP8_H_

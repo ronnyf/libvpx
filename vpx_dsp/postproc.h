@@ -11,6 +11,8 @@
 #ifndef VPX_VPX_DSP_POSTPROC_H_
 #define VPX_VPX_DSP_POSTPROC_H_
 
+#if CONFIG_POSTPROC || CONFIG_VP9_POSTPROC
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -21,5 +23,5 @@ int vpx_setup_noise(double sigma, int8_t *noise, int size);
 #ifdef __cplusplus
 }
 #endif
-
+#endif // CONFIG_POSTPROC || CONFIG_VP9_POSTPROC
 #endif  // VPX_VPX_DSP_POSTPROC_H_

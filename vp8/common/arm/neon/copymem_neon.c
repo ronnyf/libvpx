@@ -8,6 +8,9 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if HAVE_NEON
+
 #include <arm_neon.h>
 
 #include "./vp8_rtcd.h"
@@ -50,3 +53,5 @@ void vp8_copy_mem16x16_neon(unsigned char *src, int src_stride,
     dst += dst_stride;
   }
 }
+
+#endif // HAVE_NEON

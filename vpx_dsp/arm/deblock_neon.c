@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#if !CONFIG_POSTPROC && !CONFIG_VP9_POSTPROC
+#if HAVE_NEON
+
 #include <arm_neon.h>
 #include <assert.h>
 
@@ -478,3 +482,6 @@ void vpx_mbpost_proc_down_neon(uint8_t *dst, int pitch, int rows, int cols,
     dst += 8;
   }
 }
+
+#endif // !CONFIG_POSTPROC && !CONFIG_VP9_POSTPROC
+#endif // HAVE_NEON

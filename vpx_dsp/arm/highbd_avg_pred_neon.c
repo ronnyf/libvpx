@@ -8,11 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
-#include <assert.h>
-
 #include "./vpx_dsp_rtcd.h"
 #include "./vpx_config.h"
+
+#if HAVE_NEON && CONFIG_VP9_HIGHBITDEPTH && !(CONFIG_ENCODERS || CONFIG_POSTPROC || CONFIG_VP9_POSTPROC)
+
+#include <arm_neon.h>
+#include <assert.h>
 
 void vpx_highbd_comp_avg_pred_neon(uint16_t *comp_pred, const uint16_t *pred,
                                    int width, int height, const uint16_t *ref,
@@ -62,3 +64,5 @@ void vpx_highbd_comp_avg_pred_neon(uint16_t *comp_pred, const uint16_t *pred,
     } while (--i != 0);
   }
 }
+
+#endif // HAVE_NEON && CONFIG_VP9_HIGHBITDEPTH && !(CONFIG_ENCODERS || CONFIG_POSTPROC || CONFIG_VP9_POSTPROC)

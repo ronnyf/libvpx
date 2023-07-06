@@ -8,11 +8,14 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#if CONFIG_VP9
+
 #include <assert.h>
 #include <string.h>
 
-#include "./vpx_config.h"
-#include "./vpx_dsp_rtcd.h"
 #include "vpx/vpx_integer.h"
 #include "vpx_dsp/vpx_convolve.h"
 #include "vpx_dsp/vpx_dsp_common.h"
@@ -477,6 +480,27 @@ void vpx_highbd_convolve8_c(const uint16_t *src, ptrdiff_t src_stride,
                   y0_q4, y_step_q4, w, h, bd);
 }
 
+void vpx_highbd_convolve_avg_c(const uint16_t *src, ptrdiff_t src_stride,
+							   uint16_t *dst, ptrdiff_t dst_stride,
+							   const InterpKernel *filter, int x0_q4,
+							   int x_step_q4, int y0_q4, int y_step_q4, int w,
+							   int h, int bd) {
+	int x, y;
+	
+	(void)filter;
+	(void)x0_q4;
+	(void)x_step_q4;
+	(void)y0_q4;
+	(void)y_step_q4;
+	(void)bd;
+	
+	for (y = 0; y < h; ++y) {
+		for (x = 0; x < w; ++x) dst[x] = ROUND_POWER_OF_TWO(dst[x] + src[x], 1);
+		src += src_stride;
+		dst += dst_stride;
+	}
+}
+
 void vpx_highbd_convolve8_avg_c(const uint16_t *src, ptrdiff_t src_stride,
                                 uint16_t *dst, ptrdiff_t dst_stride,
                                 const InterpKernel *filter, int x0_q4,
@@ -514,24 +538,6 @@ void vpx_highbd_convolve_copy_c(const uint16_t *src, ptrdiff_t src_stride,
   }
 }
 
-void vpx_highbd_convolve_avg_c(const uint16_t *src, ptrdiff_t src_stride,
-                               uint16_t *dst, ptrdiff_t dst_stride,
-                               const InterpKernel *filter, int x0_q4,
-                               int x_step_q4, int y0_q4, int y_step_q4, int w,
-                               int h, int bd) {
-  int x, y;
-
-  (void)filter;
-  (void)x0_q4;
-  (void)x_step_q4;
-  (void)y0_q4;
-  (void)y_step_q4;
-  (void)bd;
-
-  for (y = 0; y < h; ++y) {
-    for (x = 0; x < w; ++x) dst[x] = ROUND_POWER_OF_TWO(dst[x] + src[x], 1);
-    src += src_stride;
-    dst += dst_stride;
-  }
-}
 #endif
+
+#endif // CONFIG_VP9

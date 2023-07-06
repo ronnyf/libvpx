@@ -11,6 +11,8 @@
 #ifndef VPX_VP9_ENCODER_VP9_DENOISER_H_
 #define VPX_VP9_ENCODER_VP9_DENOISER_H_
 
+#if CONFIG_VP9_TEMPORAL_DENOISING
+
 #include "vp9/encoder/vp9_block.h"
 #include "vp9/encoder/vp9_skin_detection.h"
 #include "vpx_scale/yv12config.h"
@@ -128,5 +130,5 @@ void vp9_denoiser_update_ref_frame(struct VP9_COMP *const cpi);
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // CONFIG_VP9_TEMPORAL_DENOISING
 #endif  // VPX_VP9_ENCODER_VP9_DENOISER_H_

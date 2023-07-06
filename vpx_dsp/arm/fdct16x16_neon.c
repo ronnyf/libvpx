@@ -8,10 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
-
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if HAVE_NEON && CONFIG_VP9_ENCODER
+
+#include <arm_neon.h>
+
 #include "vpx_dsp/txfm_common.h"
 #include "vpx_dsp/arm/mem_neon.h"
 #include "vpx_dsp/arm/transpose_neon.h"
@@ -437,3 +440,5 @@ void vpx_highbd_fdct16x16_neon(const int16_t *input, tran_low_t *output,
 
 #endif  // !defined(__clang__) && !defined(__ANDROID__) && defined(__GNUC__) &&
         // __GNUC__ == 4 && __GNUC_MINOR__ == 9 && __GNUC_PATCHLEVEL__ < 4
+
+#endif // HAVE_NEON && CONFIG_VP9_ENCODER

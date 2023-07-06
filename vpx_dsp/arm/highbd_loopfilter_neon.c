@@ -8,9 +8,11 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
 #include "./vpx_config.h"
+#if HAVE_NEON && CONFIG_VP9 && CONFIG_VP9_HIGHBITDEPTH
+
 #include "./vpx_dsp_rtcd.h"
+#include <arm_neon.h>
 #include "vpx_dsp/arm/transpose_neon.h"
 
 static INLINE void load_thresh(const uint8_t *blimit, const uint8_t *limit,
@@ -774,3 +776,5 @@ void vpx_highbd_lpf_vertical_16_dual_neon(uint16_t *s, int p,
   lpf_vertical_16_kernel(s, p, blimit_vec, limit_vec, thresh_vec, bd);
   lpf_vertical_16_kernel(s + 8 * p, p, blimit_vec, limit_vec, thresh_vec, bd);
 }
+
+#endif // HAVE_NEON && CONFIG_VP9 && CONFIG_VP9_HIGHBITDEPTH

@@ -22,5 +22,4 @@ double vp9_get_blockiness(const uint8_t *img1, int img1_pitch,
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
 #endif  // VPX_VP9_ENCODER_VP9_BLOCKINESS_H_

@@ -11,6 +11,8 @@
 #ifndef VPX_VPX_PORTS_MIPS_H_
 #define VPX_VPX_PORTS_MIPS_H_
 
+#if VPX_ARCH_MIPS
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -23,5 +25,5 @@ int mips_cpu_caps(void);
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // VPX_ARCH_MIPS
 #endif  // VPX_VPX_PORTS_MIPS_H_

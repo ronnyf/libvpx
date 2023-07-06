@@ -13,6 +13,8 @@
 #include "./vpx_dsp_rtcd.h"
 #include "./vpx_scale_rtcd.h"
 
+#if CONFIG_VP9_POSTPROC
+
 #include "vp9/common/vp9_onyxc_int.h"
 #include "vp9/common/vp9_postproc.h"
 
@@ -381,3 +383,5 @@ void vp9_mfqe(VP9_COMMON *cm) {
     }
   }
 }
+
+#endif // CONFIG_VP9_POSTPROC

@@ -12,6 +12,8 @@
 #define VPX_VPX_DSP_QUANTIZE_H_
 
 #include "./vpx_config.h"
+#if CONFIG_VP9_ENCODER
+
 #include "vpx_dsp/vpx_dsp_common.h"
 
 #ifdef __cplusplus
@@ -42,5 +44,7 @@ void vpx_highbd_quantize_dc_32x32(const tran_low_t *coeff_ptr,
 #ifdef __cplusplus
 }  // extern "C"
 #endif
+
+#endif // CONFIG_VP9_ENCODER
 
 #endif  // VPX_VPX_DSP_QUANTIZE_H_

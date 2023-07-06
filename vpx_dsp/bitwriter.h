@@ -33,6 +33,8 @@ typedef struct vpx_writer {
   uint8_t *buffer;
 } vpx_writer;
 
+#if CONFIG_ENCODERS
+
 void vpx_start_encode(vpx_writer *br, uint8_t *source);
 void vpx_stop_encode(vpx_writer *br);
 
@@ -116,5 +118,5 @@ static INLINE void vpx_write_literal(vpx_writer *w, int data, int bits) {
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // CONFIG_ENCODERS
 #endif  // VPX_VPX_DSP_BITWRITER_H_

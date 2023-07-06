@@ -8,11 +8,15 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#include "./vpx_config.h"
+#if HAVE_NEON && !HAVE_NEON_ASM
+
 #include <arm_neon.h>
 #include <assert.h>
 
-#include "./vpx_config.h"
-#include "./vpx_dsp_rtcd.h"
 #include "vpx/vpx_integer.h"
 #include "vpx_dsp/arm/mem_neon.h"
 #include "vpx_dsp/arm/transpose_neon.h"
@@ -2197,3 +2201,5 @@ void vpx_convolve8_avg_vert_neon(const uint8_t *src, ptrdiff_t src_stride,
 #endif  // #if VPX_ARCH_AARCH64 &&
         //     (defined(__ARM_FEATURE_DOTPROD) ||
         //      defined(__ARM_FEATURE_MATMUL_INT8))
+
+#endif // HAVE_NEON && !HAVE_NEON_ASM

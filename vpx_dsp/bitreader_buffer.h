@@ -11,6 +11,8 @@
 #ifndef VPX_VPX_DSP_BITREADER_BUFFER_H_
 #define VPX_VPX_DSP_BITREADER_BUFFER_H_
 
+#if CONFIG_DECODERS
+
 #include <limits.h>
 
 #include "vpx/vpx_integer.h"
@@ -43,5 +45,5 @@ int vpx_rb_read_inv_signed_literal(struct vpx_read_bit_buffer *rb, int bits);
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
+#endif // CONFIG_DECODERS
 #endif  // VPX_VPX_DSP_BITREADER_BUFFER_H_

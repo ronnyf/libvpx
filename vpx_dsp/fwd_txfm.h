@@ -11,6 +11,8 @@
 #ifndef VPX_VPX_DSP_FWD_TXFM_H_
 #define VPX_VPX_DSP_FWD_TXFM_H_
 
+#if CONFIG_VP9_ENCODER
+
 #include "vpx_dsp/txfm_common.h"
 
 static INLINE tran_high_t fdct_round_shift(tran_high_t input) {
@@ -22,4 +24,6 @@ static INLINE tran_high_t fdct_round_shift(tran_high_t input) {
 }
 
 void vpx_fdct32(const tran_high_t *input, tran_high_t *output, int round);
+
+#endif // CONFIG_VP9_ENCODER
 #endif  // VPX_VPX_DSP_FWD_TXFM_H_
