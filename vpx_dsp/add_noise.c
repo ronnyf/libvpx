@@ -12,7 +12,7 @@
 #include <stdlib.h>
 
 #include "./vpx_config.h"
-#if !CONFIG_POSTPROC && !CONFIG_VP9_POSTPROC
+#if VPX_X86_NO_ASM || (!CONFIG_POSTPROC && !CONFIG_VP9_POSTPROC)
 #include "./vpx_dsp_rtcd.h"
 
 #include "vpx/vpx_integer.h"

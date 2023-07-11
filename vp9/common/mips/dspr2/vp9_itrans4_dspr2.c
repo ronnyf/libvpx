@@ -8,11 +8,14 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vp9_rtcd.h"
+
+#if VPX_ARCH_MIPS
+
 #include <assert.h>
 #include <stdio.h>
 
-#include "./vpx_config.h"
-#include "./vp9_rtcd.h"
 #include "vp9/common/vp9_common.h"
 #include "vp9/common/vp9_blockd.h"
 #include "vp9/common/vp9_idct.h"
@@ -88,3 +91,5 @@ void vp9_iht4x4_16_add_dspr2(const int16_t *input, uint8_t *dest, int stride,
   }
 }
 #endif  // #if HAVE_DSPR2
+
+#endif // VPX_ARCH_MIPS

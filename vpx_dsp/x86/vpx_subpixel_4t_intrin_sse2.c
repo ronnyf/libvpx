@@ -8,9 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <emmintrin.h>
-
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if defined(__SSE2__) && !VPX_X86_NO_ASM
+
+#include <emmintrin.h>
 #include "vpx/vpx_integer.h"
 #include "vpx_dsp/x86/convolve.h"
 #include "vpx_dsp/x86/convolve_sse2.h"
@@ -1159,3 +1162,5 @@ HIGH_FUN_CONV_1D(avg_vert, y0_q4, y_step_q4, v,
 HIGH_FUN_CONV_2D(, sse2, 0)
 HIGH_FUN_CONV_2D(avg_, sse2, 1)
 #endif  // CONFIG_VP9_HIGHBITDEPTH && VPX_ARCH_X86_64
+
+#endif // defined(__SSE2__)

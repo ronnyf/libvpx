@@ -9,6 +9,8 @@
  */
 
 #include "./vpx_config.h"
+#include "./vp8_rtcd.h"
+
 #if !CONFIG_REALTIME_ONLY
 
 #include "vp8/common/onyxc_int.h"

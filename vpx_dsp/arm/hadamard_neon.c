@@ -8,9 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#if HAVE_NEON
+
 #include <arm_neon.h>
 
-#include "./vpx_dsp_rtcd.h"
 #include "vpx/vpx_integer.h"
 #include "vpx_dsp/arm/idct_neon.h"
 #include "vpx_dsp/arm/mem_neon.h"
@@ -156,3 +160,5 @@ void vpx_hadamard_32x32_neon(const int16_t *src_diff, ptrdiff_t src_stride,
     coeff += 8;
   }
 }
+
+#endif // HAVE_NEON

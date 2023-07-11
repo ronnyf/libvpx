@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include "./vp8_rtcd.h"
 #include "vp8/common/blockd.h"
 #include "vp8/common/mips/msa/vp8_macros_msa.h"
@@ -404,3 +408,5 @@ void vp8_dequant_idct_add_uv_block_msa(int16_t *q, int16_t *dq, uint8_t *dst_u,
     }
   }
 }
+
+#endif // VPX_ARCH_MIPS

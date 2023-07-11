@@ -17,10 +17,9 @@
 #if TARGET_OS_SIMULATOR
 
 #if TARGET_CPU_X86_64
-#error Not yet, got to figure out the asm part first, .S can be built with clang but .asm apparently not
-//#include "libvpx_config/config/sim_x86_64/vpx_config.h"
+#include "config/x86_64/vpx_config.h"
 #elif TARGET_CPU_ARM64
-#include "libvpx_config/arm64/vpx_config.h"
+#include "config/arm64/vpx_config.h"
 #else
 #error Unsupported
 #endif // TARGET_CPU_X86_64
@@ -30,12 +29,12 @@
 #if TARGET_OS_IOS || TARGET_OS_MACCATALYST
 
 #if TARGET_CPU_ARM64
-#include "libvpx_config/arm64/vpx_config.h"
+#include "config/arm64/vpx_config.h"
 #elif TARGET_CPU_ARM
 #if defined(__ARM_ARCH_7S__)
-#include "libvpx_config/armv7s/vpx_config.h"
+#include "config/armv7s/vpx_config.h"
 #elif defined(__ARM_ARCH_7A__)
-#include "libvpx_config/armv7/vpx_config.h"
+#include "config/armv7/vpx_config.h"
 #else
 #error Unsupported ARM_ARCH
 #endif // defined(__ARM_ARCH_7S__)
@@ -46,10 +45,9 @@
 #elif TARGET_OS_OSX
 
 #if TARGET_CPU_ARM64
-#include "libvpx_config/arm64/vpx_config.h"
+#include "config/arm64/vpx_config.h"
 #elif TARGET_CPU_X86_64
-#error Not yet, got to figure out the asm part first, .S can be built with clang but .asm apparently not
-//#include "libvpx_config/config/mac_x86_64/vpx_config.h"
+#include "config/x86_64/vpx_config.h"
 #else
 #error Unsupported
 #endif // TARGET_CPU_ARM64

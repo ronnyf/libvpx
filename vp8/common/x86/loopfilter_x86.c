@@ -9,6 +9,9 @@
  */
 
 #include "vpx_config.h"
+
+#if VPX_ARCH_X86 || VPX_ARCH_X86_64
+
 #include "vp8/common/loopfilter.h"
 
 #define prototype_loopfilter(sym)                                      \
@@ -21,6 +24,8 @@
 
 #define prototype_simple_loopfilter(sym) \
   void sym(unsigned char *y, int ystride, const unsigned char *blimit)
+
+#if !VPX_X86_NO_ASM
 
 #if HAVE_SSE2 && VPX_ARCH_X86_64
 prototype_loopfilter(vp8_loop_filter_bv_y_sse2);
@@ -127,3 +132,5 @@ void vp8_loop_filter_bvs_sse2(unsigned char *y_ptr, int y_stride,
 }
 
 #endif
+#endif // !VPX_X86_NO_ASM
+#endif // VPX_ARCH_X86

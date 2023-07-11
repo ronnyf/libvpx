@@ -7,6 +7,11 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
+
+#include "./vpx_config.h"
+
+#if VPX_ARCH_PPC
+
 #include <assert.h>
 #include <string.h>
 
@@ -406,3 +411,5 @@ void vpx_convolve8_avg_vsx(const uint8_t *src, ptrdiff_t src_stride,
                     y_step_q4, w, h);
   vpx_convolve_avg_vsx(temp, 64, dst, dst_stride, NULL, 0, 0, 0, 0, w, h);
 }
+
+#endif // VPX_ARCH_PPC

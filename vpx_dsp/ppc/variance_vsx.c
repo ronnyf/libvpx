@@ -8,10 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <assert.h>
-
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if VPX_ARCH_PPC
+
+#include <assert.h>
 #include "vpx_dsp/ppc/types_vsx.h"
 
 uint32_t vpx_get4x4sse_cs_vsx(const uint8_t *src_ptr, int src_stride,
@@ -269,3 +271,5 @@ MSE(16, 16)
 MSE(16, 8)
 MSE(8, 16)
 MSE(8, 8)
+
+#endif // VPX_ARCH_PPC

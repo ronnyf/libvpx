@@ -8,7 +8,11 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
 #include "./vp9_rtcd.h"
+
+#if VPX_ARCH_MIPS
+
 #include "vp9/common/vp9_onyxc_int.h"
 #include "vpx_dsp/mips/macros_msa.h"
 
@@ -132,3 +136,5 @@ void vp9_filter_by_weight16x16_msa(const uint8_t *src, int src_stride,
                                    int src_weight) {
   filter_by_weight16x16_msa(src, src_stride, dst, dst_stride, src_weight);
 }
+
+#endif // VPX_ARCH_MIPS

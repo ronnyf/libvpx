@@ -10,6 +10,9 @@
 
 #include "./vpx_config.h"
 #include "./vp9_rtcd.h"
+
+#if VPX_ARCH_MIPS
+
 #include "vpx_dsp/mips/macros_msa.h"
 
 #define BLOCK_ERROR_BLOCKSIZE_MSA(BSize)                                     \
@@ -106,3 +109,5 @@ int64_t vp9_block_error_msa(const tran_low_t *coeff_ptr,
   return err;
 }
 #endif  // !CONFIG_VP9_HIGHBITDEPTH
+
+#endif // HAVE_MSA

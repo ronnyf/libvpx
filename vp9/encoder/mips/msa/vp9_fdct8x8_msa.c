@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include <assert.h>
 
 #include "./vp9_rtcd.h"
@@ -63,3 +67,5 @@ void vp9_fht8x8_msa(const int16_t *input, int16_t *output, int32_t stride,
   SRLI_AVE_S_4V_H(in0, in1, in2, in3, in4, in5, in6, in7);
   ST_SH8(in0, in1, in2, in3, in4, in5, in6, in7, output, 8);
 }
+
+#endif // HAVE_MSA

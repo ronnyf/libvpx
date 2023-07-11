@@ -8,10 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#if defined(__AVX2__) && !VPX_X86_NO_ASM
+
 #include <assert.h>
 #include <immintrin.h>
-
-#include "./vpx_dsp_rtcd.h"
 
 void vpx_comp_avg_pred_avx2(uint8_t *comp_pred, const uint8_t *pred, int width,
                             int height, const uint8_t *ref, int ref_stride) {
@@ -109,3 +112,5 @@ void vpx_comp_avg_pred_avx2(uint8_t *comp_pred, const uint8_t *pred, int width,
     vpx_comp_avg_pred_sse2(comp_pred, pred, width, height, ref, ref_stride);
   }
 }
+
+#endif //  defined(__AVX2__)

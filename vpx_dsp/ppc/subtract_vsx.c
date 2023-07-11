@@ -8,10 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <assert.h>
-
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if VPX_ARCH_PPC
+
+#include <assert.h>
+
 #include "vpx/vpx_integer.h"
 #include "vpx_dsp/ppc/types_vsx.h"
 
@@ -115,3 +118,5 @@ void vpx_subtract_block_vsx(int rows, int cols, int16_t *diff,
     default: assert(0);  // unreachable
   }
 }
+
+#endif // VPX_ARCH_PPC

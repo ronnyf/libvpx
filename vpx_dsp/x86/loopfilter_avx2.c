@@ -8,9 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <immintrin.h> /* AVX2 */
-
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if defined(__AVX2__) && !VPX_X86_NO_ASM
+
+#include <immintrin.h> /* AVX2 */
 #include "vpx_ports/mem.h"
 
 void vpx_lpf_horizontal_16_avx2(unsigned char *s, int pitch,
@@ -911,3 +914,5 @@ void vpx_lpf_horizontal_16_dual_avx2(unsigned char *s, int pitch,
     _mm_storeu_si128((__m128i *)(s + 6 * pitch), q6);
   }
 }
+
+#endif // defined(__AVX2__)

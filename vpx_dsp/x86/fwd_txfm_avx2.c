@@ -8,9 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <immintrin.h>  // AVX2
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if defined(__AVX2__) && !VPX_X86_NO_ASM
+
+#include <immintrin.h>  // AVX2
 
 #include "vpx_dsp/txfm_common.h"
 #define ADD256_EPI16 _mm256_add_epi16
@@ -397,3 +400,5 @@ void vpx_fdct16x16_avx2(const int16_t *input, tran_low_t *output, int stride) {
 #undef FDCT32x32_2D_AVX2
 #undef FDCT32x32_HIGH_PRECISION
 #endif  // !CONFIG_VP9_HIGHBITDEPTH
+
+#endif //  defined(__AVX2__)

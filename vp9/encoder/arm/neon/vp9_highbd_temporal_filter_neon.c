@@ -11,15 +11,15 @@
 #include "./vp9_rtcd.h"
 #include "./vpx_config.h"
 
-#if HAVE_NEON && CONFIG_VP9_HIGHBITDEPTH && !CONFIG_REALTIME_ONLY
-
-#include <assert.h>
-#include <arm_neon.h>
-
 #include "vpx/vpx_integer.h"
 #include "vp9/encoder/vp9_encoder.h"
 #include "vp9/encoder/vp9_temporal_filter.h"
 #include "vp9/encoder/vp9_temporal_filter_constants.h"
+
+#if HAVE_NEON && CONFIG_VP9_HIGHBITDEPTH
+
+#include <assert.h>
+#include <arm_neon.h>
 
 // Compute (a-b)**2 for 8 pixels with size 16-bit
 static INLINE void highbd_store_dist_8(const uint16_t *a, const uint16_t *b,
@@ -874,4 +874,4 @@ void vp9_highbd_apply_temporal_filter_neon(
       y_dist_ptr, u_dist_ptr, v_dist_ptr);
 }
 
-#endif // HAVE_NEON && CONFIG_VP9_HIGHBITDEPTH && !CONFIG_REALTIME_ONLY
+#endif // HAVE_NEON && CONFIG_VP9_HIGHBITDEPTH

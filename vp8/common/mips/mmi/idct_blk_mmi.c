@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include "./vp8_rtcd.h"
 #include "vpx_mem/vpx_mem.h"
 
@@ -68,3 +72,5 @@ void vp8_dequant_idct_add_uv_block_mmi(int16_t *q, int16_t *dq, uint8_t *dst_u,
     dst_v += 4 * stride - 8;
   }
 }
+
+#endif // VPX_ARCH_MIPS

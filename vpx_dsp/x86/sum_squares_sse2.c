@@ -8,10 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#if defined(__SSE2__) && !VPX_X86_NO_ASM
+
 #include <assert.h>
 #include <emmintrin.h>
-
-#include "./vpx_dsp_rtcd.h"
 #include "vpx_dsp/x86/mem_sse2.h"
 
 uint64_t vpx_sum_squares_2d_i16_sse2(const int16_t *src, int stride, int size) {
@@ -103,3 +106,5 @@ uint64_t vpx_sum_squares_2d_i16_sse2(const int16_t *src, int stride, int size) {
 #endif
   }
 }
+
+#endif // defined(__SSE2__)

@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if defined(__AVX2__) && !VPX_X86_NO_ASM
+
 #include <assert.h>
 #include <immintrin.h>  // AVX2
 
@@ -439,3 +443,5 @@ void vp9_highbd_quantize_fp_32x32_avx2(
   *eob_ptr = get_max_eob(eob_max);
 }
 #endif  // CONFIG_VP9_HIGHBITDEPTH
+
+#endif // defined(__AVX2__)

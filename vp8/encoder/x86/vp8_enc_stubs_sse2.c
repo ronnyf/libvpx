@@ -10,6 +10,11 @@
 
 #include "vpx_config.h"
 #include "vp8_rtcd.h"
+
+#if !VPX_X86_NO_ASM
+
+#if defined(__SSE2__)
+
 #include "vpx_ports/x86.h"
 #include "vp8/encoder/block.h"
 
@@ -26,3 +31,7 @@ int vp8_mbuverror_sse2(MACROBLOCK *mb) {
   short *d_ptr = &mb->e_mbd.dqcoeff[256];
   return vp8_mbuverror_sse2_impl(s_ptr, d_ptr);
 }
+
+#endif // defined(__SSE2__)
+
+#endif // !VPX_X86_NO_ASM

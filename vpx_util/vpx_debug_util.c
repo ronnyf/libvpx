@@ -11,9 +11,13 @@
 #include <assert.h>
 #include <stdio.h>
 #include <string.h>
-#include "vpx_util/vpx_debug_util.h"
+
+#include "config/vpx_config.h"
 
 #if CONFIG_BITSTREAM_DEBUG || CONFIG_MISMATCH_DEBUG
+
+#include "vpx_util/vpx_debug_util.h"
+
 static int frame_idx_w = 0;
 static int frame_idx_r = 0;
 

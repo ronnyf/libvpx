@@ -9,6 +9,10 @@
  * be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if VPX_ARCH_LOONGARCH
+
 #include "./vp8_rtcd.h"
 #include "vp8/common/filter.h"
 #include "vpx_ports/mem.h"
@@ -1901,3 +1905,5 @@ void vp8_sixtap_predict16x16_lsx(uint8_t *RESTRICT src, int32_t src_stride,
     }
   }
 }
+
+#endif // VPX_ARCH_LOONGARCH

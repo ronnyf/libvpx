@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include <stdlib.h>
 #include "vp8_rtcd.h"
 #include "vpx_ports/mem.h"
@@ -2765,3 +2769,5 @@ void vp8_sixtap_predict16x16_dspr2(unsigned char *RESTRICT src_ptr,
 }
 
 #endif
+
+#endif // VPX_ARCH_MIPS

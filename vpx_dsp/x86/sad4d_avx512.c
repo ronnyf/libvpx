@@ -7,8 +7,14 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-#include <immintrin.h>  // AVX512
+
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if defined(__AVX512__) && !VPX_X86_NO_ASM
+
+#include <immintrin.h>  // AVX512
+
 #include "vpx/vpx_integer.h"
 
 void vpx_sad64x64x4d_avx512(const uint8_t *src_ptr, int src_stride,
@@ -81,3 +87,5 @@ void vpx_sad64x64x4d_avx512(const uint8_t *src_ptr, int src_stride,
     _mm_storeu_si128((__m128i *)(sad_array), sum128);
   }
 }
+
+#endif // defined(__AVX512__)

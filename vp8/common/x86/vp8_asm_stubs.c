@@ -12,8 +12,11 @@
 #include "vp8_rtcd.h"
 #include "vpx_ports/mem.h"
 
+#if VPX_ARCH_X86 || VPX_ARCH_X86_64
+
 extern const short vp8_six_tap_x86[8][6 * 8];
 
+#if !VPX_X86_NO_ASM
 extern void vp8_filter_block1d_h6_mmx(unsigned char *src_ptr,
                                       unsigned short *output_ptr,
                                       unsigned int src_pixels_per_line,
@@ -363,3 +366,6 @@ void vp8_sixtap_predict4x4_ssse3(unsigned char *src_ptr,
 }
 
 #endif
+
+#endif // !VPX_X86_NO_ASM
+#endif // VPX_ARCH_X86

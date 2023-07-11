@@ -8,9 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#if defined(__AVX2__) && !VPX_X86_NO_ASM
+
 #include <immintrin.h>
 
-#include "./vpx_dsp_rtcd.h"
 #include "vpx/vpx_integer.h"
 #include "vpx_dsp/x86/bitdepth_conversion_avx2.h"
 #include "vpx_ports/mem.h"
@@ -517,3 +521,5 @@ int vpx_highbd_satd_avx2(const tran_low_t *coeff, int length) {
   }
 }
 #endif  // CONFIG_VP9_HIGHBITDEPTH
+
+#endif //  defined(__AVX2__)

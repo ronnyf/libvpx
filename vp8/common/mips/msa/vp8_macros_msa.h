@@ -11,9 +11,12 @@
 #ifndef VPX_VP8_COMMON_MIPS_MSA_VP8_MACROS_MSA_H_
 #define VPX_VP8_COMMON_MIPS_MSA_VP8_MACROS_MSA_H_
 
+#include "./vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include <msa.h>
 
-#include "./vpx_config.h"
 #include "vpx/vpx_integer.h"
 
 #define LD_B(RTYPE, psrc) *((const RTYPE *)(psrc))
@@ -1760,3 +1763,5 @@
     tmp1_m;                                                     \
   })
 #endif  // VPX_VP8_COMMON_MIPS_MSA_VP8_MACROS_MSA_H_
+
+#endif // VPX_ARCH_MIPS

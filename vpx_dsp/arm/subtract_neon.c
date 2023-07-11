@@ -8,11 +8,14 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#if HAVE_NEON
+
 #include <arm_neon.h>
 #include <assert.h>
 
-#include "./vpx_config.h"
-#include "./vpx_dsp_rtcd.h"
 #include "vpx/vpx_integer.h"
 #include "vpx_dsp/arm/mem_neon.h"
 
@@ -135,3 +138,5 @@ void vpx_highbd_subtract_block_neon(int rows, int cols, int16_t *diff_ptr,
   }
 }
 #endif  // CONFIG_VP9_HIGHBITDEPTH
+
+#endif // HAVE_NEON

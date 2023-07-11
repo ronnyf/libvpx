@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include "vp8_rtcd.h"
 
 #if HAVE_DSPR2
@@ -344,3 +348,5 @@ void vp8_short_inv_walsh4x4_1_dspr2(short *input, short *mb_dqcoeff) {
 }
 
 #endif
+
+#endif // VPX_ARCH_MIPS

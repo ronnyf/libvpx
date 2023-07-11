@@ -10,6 +10,9 @@
 
 #include "vpx_config.h"
 #include "vp8_rtcd.h"
+
+#if defined(__SSE2__)
+
 #include "vpx_ports/x86.h"
 #include "vpx_mem/vpx_mem.h"
 #include "vp8/encoder/block.h"
@@ -224,3 +227,5 @@ void vp8_fast_quantize_b_sse2(BLOCK *b, BLOCKD *d) {
 
   *d->eob = 0xFF & _mm_cvtsi128_si32(x0);
 }
+
+#endif // defined(__SSE2__)

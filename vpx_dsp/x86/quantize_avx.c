@@ -8,13 +8,16 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#if defined(__AVX__) && !VPX_X86_NO_ASM
+
 #include <assert.h>
 #if defined(_MSC_VER)
 #include <intrin.h>
 #endif
 #include <immintrin.h>
-
-#include "./vpx_dsp_rtcd.h"
 #include "vpx/vpx_integer.h"
 #include "vpx_dsp/x86/bitdepth_conversion_sse2.h"
 #include "vpx_dsp/x86/quantize_sse2.h"
@@ -256,3 +259,5 @@ void vpx_quantize_b_32x32_avx(const tran_low_t *coeff_ptr,
 
   *eob_ptr = accumulate_eob(eob);
 }
+
+#endif // defined(__AVX__)

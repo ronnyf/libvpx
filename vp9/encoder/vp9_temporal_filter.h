@@ -32,15 +32,18 @@ static const MV kZeroMv = { 0, 0 };
 #define SUB_BH 16
 #define SUB_BW 16
 
+#include "./vpx_config.h"
+
+#if !CONFIG_REALTIME_ONLY
 void vp9_temporal_filter_init(void);
 void vp9_temporal_filter(VP9_COMP *cpi, int distance);
 
 void vp9_temporal_filter_iterate_row_c(VP9_COMP *cpi, ThreadData *td,
                                        int mb_row, int mb_col_start,
                                        int mb_col_end);
+#endif // !CONFIG_REALTIME_ONLY
 
 #ifdef __cplusplus
 }  // extern "C"
 #endif
-
 #endif  // VPX_VP9_ENCODER_VP9_TEMPORAL_FILTER_H_

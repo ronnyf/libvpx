@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if CONFIG_VP9_HIGHBITDEPTH && defined(__SSE2__) && !VPX_X86_NO_ASM
+
 #include <emmintrin.h>
 #include <stdio.h>
 
@@ -70,3 +74,5 @@ int64_t vp9_highbd_block_error_sse2(const tran_low_t *coeff,
   *ssz = sqcoeff;
   return error;
 }
+
+#endif // CONFIG_VP9_HIGHBITDEPTH && defined(__SSE2__)

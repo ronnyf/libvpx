@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include "./vp8_rtcd.h"
 #include "vp8/common/postproc.h"
 #include "vp8/common/mips/msa/vp8_macros_msa.h"
@@ -137,3 +141,5 @@ void vp8_filter_by_weight8x8_msa(uint8_t *src_ptr, int32_t src_stride,
                                  int32_t src_weight) {
   filter_by_weight8x8_msa(src_ptr, src_stride, dst_ptr, dst_stride, src_weight);
 }
+
+#endif // VPX_ARCH_MIPS

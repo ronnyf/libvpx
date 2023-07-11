@@ -10,9 +10,13 @@
 
 #include "vpx_config.h"
 #include "vp8_rtcd.h"
+
+#if defined(__MMX__)
+
 #include "vp8/common/blockd.h"
 #include "vpx_mem/vpx_mem.h"
 
+#if !VPX_X86_NO_ASM
 extern void vp8_dequantize_b_impl_mmx(short *sq, short *dq, short *q);
 
 void vp8_dequantize_b_mmx(BLOCKD *d, short *DQC) {
@@ -21,3 +25,6 @@ void vp8_dequantize_b_mmx(BLOCKD *d, short *DQC) {
 
   vp8_dequantize_b_impl_mmx(sq, dq, DQC);
 }
+#endif // !VPX_X86_NO_ASM
+
+#endif // defined(__MMX__)

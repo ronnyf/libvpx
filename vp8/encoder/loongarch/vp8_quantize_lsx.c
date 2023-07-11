@@ -8,8 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <stdint.h>
+#include "./vpx_config.h"
 #include "./vp8_rtcd.h"
+
+#if VPX_ARCH_LOONGARCH
+
+#include <stdint.h>
 #include "vpx_util/loongson_intrinsics.h"
 #include "vp8/encoder/block.h"
 
@@ -143,3 +147,5 @@ void vp8_regular_quantize_b_lsx(BLOCK *b, BLOCKD *d) {
       zbin_boost_ptr, coeff_ptr, zbin_ptr, round_ptr, quant_ptr,
       quant_shift_ptr, dequant_ptr, zbin_oq_value, qcoeff_ptr, dqcoeff_ptr);
 }
+
+#endif // #if VPX_ARCH_LOONGARCH

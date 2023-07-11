@@ -9,6 +9,7 @@
  */
 
 #include "./vpx_config.h"
+
 #if !CONFIG_REALTIME_ONLY
 
 #include <math.h>

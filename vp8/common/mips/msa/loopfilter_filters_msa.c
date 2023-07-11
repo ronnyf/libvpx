@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include "./vp8_rtcd.h"
 #include "vp8/common/loopfilter.h"
 #include "vp8/common/mips/msa/vp8_macros_msa.h"
@@ -707,3 +711,5 @@ void vp8_loop_filter_bvs_msa(uint8_t *src_y, int32_t pitch_y,
   vp8_loop_filter_simple_vertical_edge_msa(src_y + 8, pitch_y, b_limit_ptr);
   vp8_loop_filter_simple_vertical_edge_msa(src_y + 12, pitch_y, b_limit_ptr);
 }
+
+#endif // VPX_ARCH_MIPS

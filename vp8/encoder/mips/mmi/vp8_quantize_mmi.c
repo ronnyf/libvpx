@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include "vpx_mem/vpx_mem.h"
 #include "vpx_ports/asmdefs_mmi.h"
 #include "vp8/encoder/onyx_int.h"
@@ -261,3 +265,5 @@ void vp8_regular_quantize_b_mmi(BLOCK *b, BLOCKD *d) {
 
   *d->eob = (char)eob;
 }
+
+#endif // #if VPX_ARCH_MIPS

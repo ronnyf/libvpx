@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include <assert.h>
 
 #include "./vp9_rtcd.h"
@@ -499,3 +503,5 @@ void vp9_fht16x16_msa(const int16_t *input, int16_t *output, int32_t stride,
     default: assert(0); break;
   }
 }
+
+#endif // HAVE_MSA

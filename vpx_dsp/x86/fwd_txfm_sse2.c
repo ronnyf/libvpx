@@ -8,10 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <emmintrin.h>  // SSE2
-
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if defined(__SSE2__) && !VPX_X86_NO_ASM
+
+#include <emmintrin.h>  // SSE2
+
 #include "vpx_dsp/vpx_dsp_common.h"
 #include "vpx_dsp/x86/fwd_txfm_sse2.h"
 
@@ -270,3 +273,5 @@ void vpx_fdct32x32_1_sse2(const int16_t *input, tran_low_t *output,
 #undef FDCT32x32_HIGH_PRECISION
 #undef DCT_HIGH_BIT_DEPTH
 #endif  // CONFIG_VP9_HIGHBITDEPTH
+
+#endif //  defined(__SSE2__)

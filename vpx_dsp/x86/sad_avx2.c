@@ -7,8 +7,13 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-#include <immintrin.h>
+
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if defined(__AVX2__) && !VPX_X86_NO_ASM
+
+#include <immintrin.h>
 #include "vpx_ports/mem.h"
 
 static INLINE unsigned int sad64xh_avx2(const uint8_t *src_ptr, int src_stride,
@@ -206,3 +211,5 @@ FSADAVG32
 #undef FSADAVG32
 #undef FSADAVG64_H
 #undef FSADAVG32_H
+
+#endif // defined(__AVX2__)

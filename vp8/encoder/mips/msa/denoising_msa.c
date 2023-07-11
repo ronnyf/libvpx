@@ -8,8 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <stdlib.h>
+#include "vpx_config.h"
 #include "./vp8_rtcd.h"
+
+#if VPX_ARCH_MIPS
+
+#include <stdlib.h>
 #include "vp8/common/mips/msa/vp8_macros_msa.h"
 #include "vp8/encoder/denoising.h"
 
@@ -566,3 +570,5 @@ int32_t vp8_denoiser_filter_uv_msa(
 
   return FILTER_BLOCK;
 }
+
+#endif // #if VPX_ARCH_MIPS

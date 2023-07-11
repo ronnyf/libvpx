@@ -9,7 +9,9 @@
  */
 
 #include "./vpx_config.h"
+
 #if HAVE_NEON
+
 #include "./vp8_rtcd.h"
 #include "vp8/common/arm/loopfilter_arm.h"
 #include "vp8/common/loopfilter.h"

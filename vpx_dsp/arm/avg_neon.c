@@ -11,7 +11,7 @@
 #include "./vpx_dsp_rtcd.h"
 #include "./vpx_config.h"
 
-#if HAVE_NEON && CONFIG_VP9_ENCODER
+#if HAVE_NEON // && CONFIG_VP9_ENCODER
 
 #include <arm_neon.h>
 #include <assert.h>

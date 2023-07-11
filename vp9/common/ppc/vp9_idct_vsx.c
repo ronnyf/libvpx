@@ -8,9 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vp9_rtcd.h"
+
+#if VPX_ARCH_PPC
+
 #include <assert.h>
 
-#include "./vp9_rtcd.h"
 #include "vpx_dsp/vpx_dsp_common.h"
 #include "vpx_dsp/ppc/inv_txfm_vsx.h"
 #include "vpx_dsp/ppc/bitdepth_conversion_vsx.h"
@@ -114,3 +118,5 @@ void vp9_iht16x16_256_add_vsx(const tran_low_t *input, uint8_t *dest,
 
   vpx_round_store16x16_vsx(in0, in1, dest, stride);
 }
+
+#endif // VPX_ARCH_PPC

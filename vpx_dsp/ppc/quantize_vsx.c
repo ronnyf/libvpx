@@ -8,9 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <assert.h>
-
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if VPX_ARCH_PPC
+
+#include <assert.h>
 #include "vpx_dsp/ppc/types_vsx.h"
 
 // Negate 16-bit integers in a when the corresponding signed 16-bit
@@ -299,3 +302,5 @@ void vpx_quantize_b_32x32_vsx(const tran_low_t *coeff_ptr, intptr_t n_coeffs,
   eob = vec_max_across(eob);
   *eob_ptr = eob[0];
 }
+
+#endif // VPX_ARCH_PPC

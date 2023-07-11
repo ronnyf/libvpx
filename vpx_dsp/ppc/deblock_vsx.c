@@ -8,9 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <assert.h>
-
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if VPX_ARCH_PPC
+
+#include <assert.h>
 #include "vpx_dsp/ppc/types_vsx.h"
 
 extern const int16_t vpx_rv[];
@@ -372,3 +375,5 @@ void vpx_mbpost_proc_down_vsx(uint8_t *dst, int pitch, int rows, int cols,
     dst += 8;
   }
 }
+
+#endif // VPX_ARCH_PPC

@@ -7,8 +7,14 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-#include <immintrin.h>  // AVX2
+
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if defined(__AVX2__) && !VPX_X86_NO_ASM
+
+#include <immintrin.h>  // AVX2
+
 #include "vpx/vpx_integer.h"
 
 static VPX_FORCE_INLINE void calc_final_4(const __m256i *const sums /*[4]*/,
@@ -460,3 +466,5 @@ HIGHBD_SADSKIP16XNx4D(16)
 
 HIGHBD_SADSKIP16XNx4D(8)
     // clang-format on
+
+#endif // defined(__AVX2__)

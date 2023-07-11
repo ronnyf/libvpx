@@ -8,9 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <emmintrin.h>  // SSE2
-
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if defined(__SSE2__) && !VPX_X86_NO_ASM
+
+#include <emmintrin.h>  // SSE2
 #include "vpx_ports/mem.h"
 #include "vpx_ports/emmintrin_compat.h"
 #include "vpx_dsp/x86/mem_sse2.h"
@@ -1777,3 +1780,5 @@ void vpx_lpf_vertical_16_dual_sse2(unsigned char *s, int pitch,
   transpose8x16(t_dst, t_dst + 8 * 16, 16, s - 8, pitch);
   transpose8x16(t_dst + 8, t_dst + 8 + 8 * 16, 16, s - 8 + 8 * pitch, pitch);
 }
+
+#endif // defined(__SSE2__)

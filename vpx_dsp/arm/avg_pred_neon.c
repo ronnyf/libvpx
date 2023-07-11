@@ -9,7 +9,7 @@
  */
 
 #include "./vpx_config.h"
-#if HAVE_NEON && !(CONFIG_ENCODERS || CONFIG_POSTPROC || CONFIG_VP9_POSTPROC)
+#if HAVE_NEON && (CONFIG_ENCODERS || CONFIG_POSTPROC || CONFIG_VP9_POSTPROC)
 
 #include <arm_neon.h>
 #include <assert.h>

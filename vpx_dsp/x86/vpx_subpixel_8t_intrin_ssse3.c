@@ -8,12 +8,14 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#if defined(__SSE2__) && !VPX_X86_NO_ASM
+
 #include <tmmintrin.h>  // SSSE3
 
 #include <string.h>
-
-#include "./vpx_config.h"
-#include "./vpx_dsp_rtcd.h"
 #include "vpx_dsp/vpx_filter.h"
 #include "vpx_dsp/x86/convolve.h"
 #include "vpx_dsp/x86/convolve_sse2.h"
@@ -1085,3 +1087,5 @@ void vpx_scaled_2d_ssse3(const uint8_t *src, ptrdiff_t src_stride, uint8_t *dst,
 //                              int w, int h);
 FUN_CONV_2D(, ssse3, 0)
 FUN_CONV_2D(avg_, ssse3, 1)
+
+#endif // defined(__SSE2__)

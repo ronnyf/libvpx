@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include "./vp8_rtcd.h"
 #include "vp8/common/blockd.h"
 #include "vpx_mem/vpx_mem.h"
@@ -113,3 +117,5 @@ void vp8_dequant_idct_add_mmi(int16_t *input, int16_t *dq, unsigned char *dest,
       : [input] "r"(input)
       : "memory");
 }
+
+#endif // VPX_ARCH_MIPS

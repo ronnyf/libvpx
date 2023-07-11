@@ -7,8 +7,13 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-#include <immintrin.h>  // AVX2
+
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if defined(__AVX2__) && !VPX_X86_NO_ASM
+
+#include <immintrin.h>  // AVX2
 #include "vpx/vpx_integer.h"
 
 // Note with sums[4] some versions of Visual Studio may fail due to parameter
@@ -182,3 +187,5 @@ SADS64_H(32)
 SADS32_H(64)
 SADS32_H(32)
 SADS32_H(16)
+
+#endif // defined(__AVX2__)

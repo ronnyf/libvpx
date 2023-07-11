@@ -8,9 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#if defined(__SSSE3__) && !VPX_X86_NO_ASM
+
 #include <tmmintrin.h>
 
-#include "./vpx_dsp_rtcd.h"
 #include "vpx_dsp/x86/inv_txfm_sse2.h"
 #include "vpx_dsp/x86/inv_txfm_ssse3.h"
 #include "vpx_dsp/x86/transpose_sse2.h"
@@ -362,3 +366,5 @@ void vpx_idct32x32_135_add_ssse3(const tran_low_t *input, uint8_t *dest,
     dest += 8;
   }
 }
+
+#endif // defined(__SSSE3__)

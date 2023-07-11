@@ -11,6 +11,8 @@
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
 
+#if VPX_ARCH_PPC
+
 #include "vpx_dsp/ppc/transpose_vsx.h"
 #include "vpx_dsp/ppc/txfm_common_vsx.h"
 #include "vpx_dsp/ppc/types_vsx.h"
@@ -551,3 +553,5 @@ void vpx_fdct32x32_rd_vsx(const int16_t *input, tran_low_t *out, int stride) {
 
   store(out + 24 * 32, temp6);
 }
+
+#endif // VPX_ARCH_PPC

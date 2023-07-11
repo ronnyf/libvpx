@@ -8,8 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <immintrin.h>
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if CONFIG_VP9_HIGHBITDEPTH && defined(__AVX2__) && !VPX_X86_NO_ASM
+
+#include <immintrin.h>
 #include "vpx_dsp/x86/convolve.h"
 #include "vpx_dsp/x86/convolve_avx2.h"
 
@@ -1493,3 +1497,5 @@ HIGH_FUN_CONV_1D(avg_vert, y0_q4, y_step_q4, v,
 HIGH_FUN_CONV_2D(avg_, avx2, 1)
 
 #undef HIGHBD_FUNC
+
+#endif // CONFIG_VP9_HIGHBITDEPTH && defined(__AVX2__)

@@ -8,7 +8,11 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if VPX_ARCH_MIPS
+
 #include "vpx_dsp/variance.h"
 #include "vpx_ports/mem.h"
 #include "vpx/vpx_integer.h"
@@ -1355,3 +1359,5 @@ SUBPIX_AVG_VAR(8, 8)
 SUBPIX_AVG_VAR(8, 4)
 SUBPIX_AVG_VAR(4, 8)
 SUBPIX_AVG_VAR(4, 4)
+
+#endif // VPX_ARCH_MIPS

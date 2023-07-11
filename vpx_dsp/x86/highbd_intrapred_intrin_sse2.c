@@ -8,10 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <emmintrin.h>  // SSE2
-
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if defined(__SSE2__) && !VPX_X86_NO_ASM
+
+#include <emmintrin.h>  // SSE2
 #include "vpx/vpx_integer.h"
 
 // -----------------------------------------------------------------------------
@@ -532,3 +534,5 @@ void vpx_highbd_d63_predictor_4x4_sse2(uint16_t *dst, ptrdiff_t stride,
   dst += stride;
   _mm_storel_epi64((__m128i *)dst, row3);
 }
+
+#endif // defined(__SSE2__)

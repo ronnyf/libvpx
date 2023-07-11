@@ -431,14 +431,6 @@ void vpx_lpf_vertical_8_dual_c(uint8_t *s, int pitch, const uint8_t *blimit0, co
 void vpx_lpf_vertical_8_dual_neon(uint8_t *s, int pitch, const uint8_t *blimit0, const uint8_t *limit0, const uint8_t *thresh0, const uint8_t *blimit1, const uint8_t *limit1, const uint8_t *thresh1);
 #define vpx_lpf_vertical_8_dual vpx_lpf_vertical_8_dual_neon
 
-void vpx_mbpost_proc_across_ip_c(unsigned char *src, int pitch, int rows, int cols,int flimit);
-void vpx_mbpost_proc_across_ip_neon(unsigned char *src, int pitch, int rows, int cols,int flimit);
-#define vpx_mbpost_proc_across_ip vpx_mbpost_proc_across_ip_neon
-
-void vpx_mbpost_proc_down_c(unsigned char *dst, int pitch, int rows, int cols,int flimit);
-void vpx_mbpost_proc_down_neon(unsigned char *dst, int pitch, int rows, int cols,int flimit);
-#define vpx_mbpost_proc_down vpx_mbpost_proc_down_neon
-
 void vpx_minmax_8x8_c(const uint8_t *s, int p, const uint8_t *d, int dp, int *min, int *max);
 void vpx_minmax_8x8_neon(const uint8_t *s, int p, const uint8_t *d, int dp, int *min, int *max);
 #define vpx_minmax_8x8 vpx_minmax_8x8_neon
@@ -458,13 +450,6 @@ unsigned int vpx_mse8x16_neon(const uint8_t *src_ptr, int src_stride, const uint
 unsigned int vpx_mse8x8_c(const uint8_t *src_ptr, int src_stride, const uint8_t *ref_ptr, int ref_stride, unsigned int *sse);
 unsigned int vpx_mse8x8_neon(const uint8_t *src_ptr, int src_stride, const uint8_t *ref_ptr, int ref_stride, unsigned int *sse);
 #define vpx_mse8x8 vpx_mse8x8_neon
-
-void vpx_plane_add_noise_c(uint8_t *start, const int8_t *noise, int blackclamp, int whiteclamp, int width, int height, int pitch);
-#define vpx_plane_add_noise vpx_plane_add_noise_c
-
-void vpx_post_proc_down_and_across_mb_row_c(unsigned char *src, unsigned char *dst, int src_pitch, int dst_pitch, int cols, unsigned char *flimits, int size);
-void vpx_post_proc_down_and_across_mb_row_neon(unsigned char *src, unsigned char *dst, int src_pitch, int dst_pitch, int cols, unsigned char *flimits, int size);
-#define vpx_post_proc_down_and_across_mb_row vpx_post_proc_down_and_across_mb_row_neon
 
 void vpx_quantize_b_c(const tran_low_t *coeff_ptr, intptr_t n_coeffs, const int16_t *zbin_ptr, const int16_t *round_ptr, const int16_t *quant_ptr, const int16_t *quant_shift_ptr, tran_low_t *qcoeff_ptr, tran_low_t *dqcoeff_ptr, const int16_t *dequant_ptr, uint16_t *eob_ptr, const int16_t *scan, const int16_t *iscan);
 void vpx_quantize_b_neon(const tran_low_t *coeff_ptr, intptr_t n_coeffs, const int16_t *zbin_ptr, const int16_t *round_ptr, const int16_t *quant_ptr, const int16_t *quant_shift_ptr, tran_low_t *qcoeff_ptr, tran_low_t *dqcoeff_ptr, const int16_t *dequant_ptr, uint16_t *eob_ptr, const int16_t *scan, const int16_t *iscan);

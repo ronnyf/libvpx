@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if defined(__SSSE3__)
+
 #include <tmmintrin.h> /* SSSE3 */
 
 #include "./vp8_rtcd.h"
@@ -91,3 +95,5 @@ void vp8_fast_quantize_b_ssse3(BLOCK *b, BLOCKD *d) {
 
   *d->eob = eob;
 }
+
+#endif // defined(__SSSE3__)

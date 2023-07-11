@@ -10,7 +10,7 @@
 #ifndef VPX_VPX_VP8CX_H_
 #define VPX_VPX_VP8CX_H_
 
-#include "libvpx_config/vpx_config.h"
+#include "config/vpx_config.h"
 
 #if CONFIG_VP8_ENCODER
 

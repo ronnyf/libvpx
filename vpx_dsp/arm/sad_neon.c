@@ -8,10 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <arm_neon.h>
-
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if HAVE_NEON
+
+#include <arm_neon.h>
 
 #include "vpx/vpx_integer.h"
 #include "vpx_dsp/arm/mem_neon.h"
@@ -568,3 +570,5 @@ SAD_WXH_AVG_NEON(32, 64)
 
 SAD_WXH_AVG_NEON(64, 32)
 SAD_WXH_AVG_NEON(64, 64)
+
+#endif // HAVE_NEON

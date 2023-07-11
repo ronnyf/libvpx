@@ -8,9 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <emmintrin.h>  // SSE2
-
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if defined(__SSE2__) && !VPX_X86_NO_ASM
+
+#include <emmintrin.h>  // SSE2
 #include "vpx_dsp/x86/inv_txfm_sse2.h"
 #include "vpx_dsp/x86/transpose_sse2.h"
 #include "vpx_dsp/x86/txfm_common_sse2.h"
@@ -1233,3 +1236,5 @@ void vpx_idct32x32_1_add_sse2(const tran_low_t *input, uint8_t *dest,
     recon_and_store_16(dest + j * stride + 16, dc_value);
   }
 }
+
+#endif // defined(__SSE2__)

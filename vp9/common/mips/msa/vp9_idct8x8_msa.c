@@ -8,9 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vp9_rtcd.h"
+
+#if VPX_ARCH_MIPS
+
 #include <assert.h>
 
-#include "./vp9_rtcd.h"
 #include "vp9/common/vp9_enums.h"
 #include "vpx_dsp/mips/inv_txfm_msa.h"
 
@@ -77,3 +81,5 @@ void vp9_iht8x8_64_add_msa(const int16_t *input, uint8_t *dst,
   dst += (4 * dst_stride);
   VP9_ADDBLK_ST8x4_UB(dst, dst_stride, in4, in5, in6, in7);
 }
+
+#endif // VPX_ARCH_MIPS

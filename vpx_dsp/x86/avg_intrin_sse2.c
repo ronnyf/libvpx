@@ -8,9 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <emmintrin.h>
-
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if defined(__SSE2__) && !VPX_X86_NO_ASM
+
+#include <emmintrin.h>
 #include "vpx/vpx_integer.h"
 #include "vpx_dsp/x86/bitdepth_conversion_sse2.h"
 #include "vpx_ports/mem.h"
@@ -612,3 +615,5 @@ int vpx_vector_var_sse2(const int16_t *ref, const int16_t *src, const int bwl) {
 
   return _mm_cvtsi128_si32(sse) - ((mean * mean) >> (bwl + 2));
 }
+
+#endif //  defined(__SSE2__)

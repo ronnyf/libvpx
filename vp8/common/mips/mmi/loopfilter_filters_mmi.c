@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include "./vpx_dsp_rtcd.h"
 #include "vp8/common/loopfilter.h"
 #include "vp8/common/onyxc_int.h"
@@ -1413,3 +1417,5 @@ void vp8_loop_filter_bvs_mmi(unsigned char *y_ptr, int y_stride,
   vp8_loop_filter_simple_vertical_edge_mmi(y_ptr + 8, y_stride, blimit);
   vp8_loop_filter_simple_vertical_edge_mmi(y_ptr + 12, y_stride, blimit);
 }
+
+#endif // VPX_ARCH_MIPS

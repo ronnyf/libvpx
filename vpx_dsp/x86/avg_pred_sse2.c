@@ -8,10 +8,14 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#if defined(__SSE2__) && !VPX_X86_NO_ASM
+
 #include <assert.h>
 #include <emmintrin.h>
 
-#include "./vpx_dsp_rtcd.h"
 #include "vpx/vpx_integer.h"
 #include "vpx_dsp/x86/mem_sse2.h"
 
@@ -67,3 +71,5 @@ void vpx_comp_avg_pred_sse2(uint8_t *comp_pred, const uint8_t *pred, int width,
     }
   }
 }
+
+#endif //  defined(__SSE2__)

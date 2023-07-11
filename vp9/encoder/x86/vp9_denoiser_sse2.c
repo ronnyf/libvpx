@@ -8,10 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <emmintrin.h>
-
 #include "./vpx_config.h"
 #include "./vp9_rtcd.h"
+
+#if defined(__SSE2__) && CONFIG_VP9_TEMPORAL_DENOISING && !VPX_X86_NO_ASM
+
+#include <emmintrin.h>
 
 #include "vpx/vpx_integer.h"
 #include "vp9/common/vp9_reconinter.h"
@@ -325,3 +327,5 @@ int vp9_denoiser_filter_sse2(const uint8_t *sig, int sig_stride,
     return COPY_BLOCK;
   }
 }
+
+#endif // defined(__SSE2__) && CONFIG_VP9_TEMPORAL_DENOISING

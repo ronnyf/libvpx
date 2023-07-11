@@ -8,11 +8,14 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vp8_rtcd.h"
+
+#if defined(__SSE2__)
+
 #include <assert.h>
 #include <xmmintrin.h>
 
-#include "./vp8_rtcd.h"
-#include "./vpx_config.h"
 #include "vp8/common/filter.h"
 #include "vpx_dsp/x86/mem_sse2.h"
 #include "vpx_ports/mem.h"
@@ -334,3 +337,5 @@ void vp8_bilinear_predict4x4_sse2(uint8_t *src_ptr, int src_pixels_per_line,
 
   vertical_4x4(FData, dst_ptr, dst_pitch, yoffset);
 }
+
+#endif // defined(__SSE2__)

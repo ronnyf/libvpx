@@ -8,10 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#if defined(__AVX2__) && !VPX_X86_NO_ASM
+
 #include <immintrin.h>
 #include <stdio.h>
-
-#include "./vpx_dsp_rtcd.h"
 #include "vpx_dsp/x86/convolve.h"
 #include "vpx_dsp/x86/convolve_avx2.h"
 #include "vpx_dsp/x86/convolve_sse2.h"
@@ -1372,3 +1375,5 @@ FUN_CONV_1D(avg_vert, y0_q4, y_step_q4, v,
 FUN_CONV_2D(, avx2, 0)
 FUN_CONV_2D(avg_, avx2, 1)
 #endif  // HAVE_AX2 && HAVE_SSSE3
+
+#endif // defined(__AVX2__)

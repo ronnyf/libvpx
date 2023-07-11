@@ -8,14 +8,16 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <math.h>
-#include <stdlib.h>
-#include <stdio.h>
-
 #include "./vpx_dsp_rtcd.h"
 #include "./vpx_config.h"
 #include "./vpx_scale_rtcd.h"
 #include "./vp9_rtcd.h"
+
+#if CONFIG_VP9_POSTPROC
+
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 #include "vpx_dsp/vpx_dsp_common.h"
 #include "vpx_dsp/postproc.h"
@@ -26,8 +28,6 @@
 
 #include "vp9/common/vp9_onyxc_int.h"
 #include "vp9/common/vp9_postproc.h"
-
-#if CONFIG_VP9_POSTPROC
 
 static const uint8_t q_diff_thresh = 20;
 static const uint8_t last_q_thresh = 170;

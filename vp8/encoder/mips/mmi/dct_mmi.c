@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include "./vp8_rtcd.h"
 #include "vpx_ports/mem.h"
 #include "vpx_ports/asmdefs_mmi.h"
@@ -432,3 +436,5 @@ void vp8_short_walsh4x4_mmi(int16_t *input, int16_t *output, int pitch) {
   );
   /* clang-format on */
 }
+
+#endif // #if VPX_ARCH_MIPS

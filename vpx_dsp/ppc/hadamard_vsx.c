@@ -8,7 +8,11 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if VPX_ARCH_PPC
+
 #include "vpx_dsp/ppc/types_vsx.h"
 #include "vpx_dsp/ppc/transpose_vsx.h"
 #include "vpx_dsp/ppc/bitdepth_conversion_vsx.h"
@@ -117,3 +121,5 @@ void vpx_hadamard_16x16_vsx(const int16_t *src_diff, ptrdiff_t src_stride,
     coeff += 8;
   }
 }
+
+#endif // VPX_ARCH_PPC

@@ -8,10 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#if defined(__AVX2__) && !VPX_X86_NO_ASM
+
 #include <assert.h>
 #include <immintrin.h>
-
-#include "./vpx_dsp_rtcd.h"
 #include "vpx/vpx_integer.h"
 #include "vp9/common/vp9_scan.h"
 #include "vp9/encoder/vp9_block.h"
@@ -289,3 +292,5 @@ void vpx_quantize_b_32x32_avx2(const tran_low_t *coeff_ptr,
 
   *eob_ptr = accumulate_eob256(v_eobmax);
 }
+
+#endif // defined(__AVX2__)

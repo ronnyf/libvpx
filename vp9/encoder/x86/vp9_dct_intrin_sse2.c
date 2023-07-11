@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if defined(__SSE2__) && !VPX_X86_NO_ASM
+
 #include <assert.h>
 #include <emmintrin.h>  // SSE2
 
@@ -1535,3 +1539,5 @@ void vp9_fht16x16_sse2(const int16_t *input, tran_low_t *output, int stride,
       break;
   }
 }
+
+#endif // defined(__SSE2__)

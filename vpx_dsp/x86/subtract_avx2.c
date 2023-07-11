@@ -8,10 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#if defined(__AVX2__) && !VPX_X86_NO_ASM
+
 #include <assert.h>
 #include <immintrin.h>
-
-#include "./vpx_dsp_rtcd.h"
 #include "vpx/vpx_integer.h"
 
 static VPX_FORCE_INLINE void subtract32_avx2(int16_t *diff_ptr,
@@ -201,3 +204,5 @@ void vpx_highbd_subtract_block_avx2(int rows, int cols, int16_t *diff_ptr,
   }
 }
 #endif  // CONFIG_VP9_HIGHBITDEPTH
+
+#endif // defined(__AVX2__)

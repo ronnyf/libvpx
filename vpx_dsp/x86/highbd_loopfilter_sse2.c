@@ -8,9 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <emmintrin.h>  // SSE2
-
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if defined(__SSE2__) && !VPX_X86_NO_ASM
+
+#include <emmintrin.h>  // SSE2
 #include "vpx_ports/mem.h"
 
 static INLINE __m128i signed_char_clamp_bd_sse2(__m128i value, int bd) {
@@ -1138,3 +1141,5 @@ void vpx_highbd_lpf_vertical_16_dual_sse2(uint16_t *s, int pitch,
   highbd_transpose8x16(t_dst + 8, t_dst + 8 + 8 * 16, 16, s - 8 + 8 * pitch,
                        pitch);
 }
+
+#endif // defined(__SSE2__)

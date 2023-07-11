@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include "vp8/common/filter.h"
 #include "vpx_ports/asmdefs_mmi.h"
 
@@ -425,3 +429,5 @@ sixtapNxM(4, 4);
 sixtapNxM(8, 8);
 sixtapNxM(8, 4);
 sixtapNxM(16, 16);
+
+#endif // VPX_ARCH_MIPS

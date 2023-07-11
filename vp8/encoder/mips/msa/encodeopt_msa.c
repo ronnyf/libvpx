@@ -9,6 +9,10 @@
  */
 
 #include "./vp8_rtcd.h"
+#include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include "vp8/common/mips/msa/vp8_macros_msa.h"
 #include "vp8/encoder/block.h"
 
@@ -165,3 +169,6 @@ int32_t vp8_mbuverror_msa(MACROBLOCK *mb) {
 
   return err;
 }
+
+#endif // #if VPX_ARCH_MIPS
+

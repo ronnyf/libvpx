@@ -9,6 +9,10 @@
  * be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if VPX_ARCH_LOONGARCH
+
 #include "./vp8_rtcd.h"
 #include "vp8/common/loopfilter.h"
 #include "vpx_util/loongson_intrinsics.h"
@@ -741,3 +745,5 @@ void vp8_loop_filter_bv_lsx(uint8_t *src_y, uint8_t *src_u, uint8_t *src_v,
                                      *lpf_info_ptr->hev_thr);
   }
 }
+
+#endif // VPX_ARCH_LOONGARCH

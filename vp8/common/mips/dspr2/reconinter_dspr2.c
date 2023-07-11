@@ -9,6 +9,10 @@
  */
 
 #include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
+#include "vpx_config.h"
 #include "vp8_rtcd.h"
 #include "vpx/vpx_integer.h"
 
@@ -95,3 +99,5 @@ __inline void vp8_copy_mem8x4_dspr2(unsigned char *RESTRICT src, int src_stride,
 }
 
 #endif
+
+#endif // VPX_ARCH_MIPS

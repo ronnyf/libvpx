@@ -8,7 +8,11 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if VPX_ARCH_PPC
+
 #include "vpx_dsp/ppc/types_vsx.h"
 
 void vpx_v_predictor_16x16_vsx(uint8_t *dst, ptrdiff_t stride,
@@ -765,3 +769,5 @@ void vpx_d63_predictor_32x32_vsx(uint8_t *dst, ptrdiff_t stride,
     row1_1 = vec_perm(row1_1, above_right, sl1);
   }
 }
+
+#endif // VPX_ARCH_PPC

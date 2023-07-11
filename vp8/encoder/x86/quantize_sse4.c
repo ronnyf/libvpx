@@ -8,9 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "vpx_config.h"
+#include "vp8_rtcd.h"
+
+#if defined(__SSE4_1__)
+
 #include <smmintrin.h> /* SSE4.1 */
 
-#include "./vp8_rtcd.h"
 #include "vp8/encoder/block.h"
 #include "vpx_ports/bitops.h" /* get_lsb */
 #include "vpx_ports/compiler_attributes.h"
@@ -139,3 +143,5 @@ VPX_NO_UNSIGNED_SHIFT_CHECK void vp8_regular_quantize_b_sse4_1(BLOCK *b,
 
   *d->eob = eob + 1;
 }
+
+#endif // defined(__SSE4_1)

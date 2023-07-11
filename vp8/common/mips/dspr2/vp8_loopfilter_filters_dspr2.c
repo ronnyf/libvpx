@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include <stdlib.h>
 #include "vp8_rtcd.h"
 #include "vp8/common/onyxc_int.h"
@@ -2399,3 +2403,5 @@ void vp8_loop_filter_bv_dspr2(unsigned char *y_ptr, unsigned char *u_ptr,
 }
 
 #endif
+
+#endif // VPX_ARCH_MIPS

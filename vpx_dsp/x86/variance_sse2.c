@@ -8,11 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <assert.h>
-#include <emmintrin.h>  // SSE2
-
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if defined(__SSE2__) && !VPX_X86_NO_ASM
+
+#include <assert.h>
+#include <emmintrin.h>  // SSE2
 #include "vpx_ports/mem.h"
 #include "vpx_dsp/x86/mem_sse2.h"
 
@@ -563,3 +565,5 @@ FNS(ssse3, ssse3)
 
 #undef FNS
 #undef FN
+
+#endif // defined(__SSE2__)

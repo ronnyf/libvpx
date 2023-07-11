@@ -8,9 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <stdlib.h>
-
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if VPX_ARCH_PPC
+
+#include <stdlib.h>
 
 #include "vpx_dsp/ppc/types_vsx.h"
 
@@ -259,3 +262,5 @@ SAD32_4D(32);
 SAD32_4D(64);
 SAD64_4D(32);
 SAD64_4D(64);
+
+#endif // VPX_ARCH_PPC

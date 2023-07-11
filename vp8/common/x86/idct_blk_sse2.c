@@ -11,6 +11,10 @@
 #include "vpx_config.h"
 #include "vp8_rtcd.h"
 
+#if !VPX_X86_NO_ASM
+
+#if defined(__SSE2__)
+
 void vp8_idct_dequant_0_2x_sse2(short *q, short *dq, unsigned char *dst,
                                 int dst_stride);
 void vp8_idct_dequant_full_2x_sse2(short *q, short *dq, unsigned char *dst,
@@ -82,3 +86,7 @@ void vp8_dequant_idct_add_uv_block_sse2(short *q, short *dq,
     }
   }
 }
+
+#endif // defined(__SSE2__)
+
+#endif // !VPX_X86_NO_ASM

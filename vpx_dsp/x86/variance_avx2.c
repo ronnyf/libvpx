@@ -8,9 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <immintrin.h>  // AVX2
-
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if defined(__AVX2__) && !VPX_X86_NO_ASM
+
+#include <immintrin.h>  // AVX2
 
 /* clang-format off */
 DECLARE_ALIGNED(32, static const uint8_t, bilinear_filters_avx2[512]) = {
@@ -870,3 +873,5 @@ unsigned int vpx_sub_pixel_avg_variance32x32_avx2(
                                                  second_pred, 32, 32, sse);
   return *sse - (uint32_t)(((int64_t)se * se) >> 10);
 }
+
+#endif // defined(__AVX2__)

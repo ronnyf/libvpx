@@ -8,6 +8,11 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#if VPX_ARCH_PPC
+
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
@@ -16,7 +21,6 @@
 #include "vpx_dsp/ppc/types_vsx.h"
 #include "vpx_dsp/ppc/inv_txfm_vsx.h"
 
-#include "./vpx_dsp_rtcd.h"
 #include "vpx_dsp/inv_txfm.h"
 
 static const int16x8_t cospi1_v = { 16364, 16364, 16364, 16364,
@@ -1826,3 +1830,5 @@ void vpx_iadst16_vsx(int16x8_t *src0, int16x8_t *src1) {
   src1[13] = tmp1[9];
   src1[15] = vec_sub(zero16v, tmp1[1]);
 }
+
+#endif // VPX_ARCH_PPC

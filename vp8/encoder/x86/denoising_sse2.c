@@ -8,6 +8,11 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "vpx_config.h"
+#include "vp8_rtcd.h"
+
+#if defined(__SSE2__)
+
 #include "vp8/encoder/denoising.h"
 #include "vp8/common/reconinter.h"
 #include "vpx/vpx_integer.h"
@@ -370,3 +375,5 @@ int vp8_denoiser_filter_uv_sse2(unsigned char *mc_running_avg,
   vp8_copy_mem8x8(running_avg_start, avg_stride, sig_start, sig_stride);
   return FILTER_BLOCK;
 }
+
+#endif // defined(__SSE2__)

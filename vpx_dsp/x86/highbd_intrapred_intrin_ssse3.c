@@ -8,10 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <tmmintrin.h>
-
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if defined(__SSSE3__) && !VPX_X86_NO_ASM
+
+#include <tmmintrin.h>
+
 #include "vpx/vpx_integer.h"
 
 // -----------------------------------------------------------------------------
@@ -928,3 +931,5 @@ void vpx_highbd_d63_predictor_32x32_ssse3(uint16_t *dst, ptrdiff_t stride,
   _mm_store_si128((__m128i *)(dst + 16), avg3_2);
   _mm_store_si128((__m128i *)(dst + 24), avg3_3);
 }
+
+#endif // defined(__SSSE3__)

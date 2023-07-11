@@ -8,8 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <stdint.h>
+#include "./vpx_config.h"
 #include "./vp8_rtcd.h"
+
+#if VPX_ARCH_LOONGARCH
+
+#include <stdint.h>
 #include "vpx_util/loongson_intrinsics.h"
 
 #define LSX_TRANSPOSE4x4_H(_in0, _in1, _in2, _in3, _out0, _out1, _out2, _out3) \
@@ -159,3 +163,6 @@ void vp8_short_fdct8x4_lsx(int16_t *input, int16_t *output, int32_t pitch) {
   __lsx_vst(in0, output, 32);
   __lsx_vst(in2, output, 48);
 }
+
+
+#endif // #if VPX_ARCH_LOONGARCH

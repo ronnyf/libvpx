@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include "./vp8_rtcd.h"
 #include "vp8/common/mips/msa/vp8_macros_msa.h"
 
@@ -282,3 +286,5 @@ void vp8_temporal_filter_apply_msa(uint8_t *frame1, uint32_t stride,
     }
   }
 }
+
+#endif // #if VPX_ARCH_MIPS

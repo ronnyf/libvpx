@@ -8,7 +8,11 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
 #include "./vp8_rtcd.h"
+
+#if VPX_ARCH_LOONGARCH
+
 #include "vpx_util/loongson_intrinsics.h"
 #include "vp8/encoder/block.h"
 
@@ -80,3 +84,5 @@ int32_t vp8_mbblock_error_lsx(MACROBLOCK *mb, int32_t dc) {
   }
   return err;
 }
+
+#endif // #if VPX_ARCH_LOONGARCH

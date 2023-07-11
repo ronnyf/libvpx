@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include "./vp8_rtcd.h"
 #include "vp8/common/mips/msa/vp8_macros_msa.h"
 
@@ -60,3 +64,5 @@ void vp8_copy_mem8x4_msa(uint8_t *src, int32_t src_stride, uint8_t *dst,
                          int32_t dst_stride) {
   copy_8x4_msa(src, src_stride, dst, dst_stride);
 }
+
+#endif // VPX_ARCH_MIPS

@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include "./vp8_rtcd.h"
 #include "vpx_ports/asmdefs_mmi.h"
 
@@ -112,3 +116,5 @@ void vp8_copy_mem8x4_mmi(unsigned char *src, int src_stride, unsigned char *dst,
   );
   /* clang-format on */
 }
+
+#endif // VPX_ARCH_MIPS

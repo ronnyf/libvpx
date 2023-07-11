@@ -8,9 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <smmintrin.h>  // SSE4.1
-
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if CONFIG_VP9_HIGHBITDEPTH && defined(__SSE4_1__) && !VPX_X86_NO_ASM
+
+#include <smmintrin.h>  // SSE4.1
 #include "vpx_dsp/x86/highbd_inv_txfm_sse2.h"
 #include "vpx_dsp/x86/highbd_inv_txfm_sse4.h"
 #include "vpx_dsp/x86/inv_txfm_sse2.h"
@@ -763,3 +766,5 @@ void vpx_highbd_idct32x32_34_add_sse4_1(const tran_low_t *input, uint16_t *dest,
     }
   }
 }
+
+#endif // CONFIG_VP9_HIGHBITDEPTH && defined(__SSE4_1__)

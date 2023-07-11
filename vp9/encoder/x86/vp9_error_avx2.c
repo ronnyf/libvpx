@@ -8,10 +8,14 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vp9_rtcd.h"
+
+#if defined(__AVX2__) && !VPX_X86_NO_ASM
+
 #include <assert.h>
 #include <immintrin.h>
 
-#include "./vp9_rtcd.h"
 #include "vpx/vpx_integer.h"
 #include "vpx_dsp/vpx_dsp_common.h"
 #include "vpx_dsp/x86/bitdepth_conversion_avx2.h"
@@ -159,3 +163,5 @@ int64_t vp9_block_error_fp_avx2(const tran_low_t *coeff,
   _mm_storel_epi64((__m128i *)&sse, sse_128);
   return sse;
 }
+
+#endif // defined(__AVX2__)

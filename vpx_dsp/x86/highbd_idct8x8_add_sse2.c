@@ -8,9 +8,13 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#if CONFIG_VP9_HIGHBITDEPTH && defined(__SSE2__) && !VPX_X86_NO_ASM
+
 #include <emmintrin.h>  // SSE2
 
-#include "./vpx_dsp_rtcd.h"
 #include "vpx_dsp/x86/highbd_inv_txfm_sse2.h"
 #include "vpx_dsp/x86/inv_txfm_sse2.h"
 #include "vpx_dsp/x86/transpose_sse2.h"
@@ -211,3 +215,5 @@ void vpx_highbd_idct8x8_1_add_sse2(const tran_low_t *input, uint16_t *dest,
                                    int stride, int bd) {
   highbd_idct_1_add_kernel(input, dest, stride, bd, 8);
 }
+
+#endif // CONFIG_VP9_HIGHBITDEPTH && defined(__SSE2__)

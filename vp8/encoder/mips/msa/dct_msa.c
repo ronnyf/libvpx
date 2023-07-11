@@ -8,7 +8,11 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "vpx_config.h"
 #include "./vp8_rtcd.h"
+
+#if VPX_ARCH_MIPS
+
 #include "vp8/common/mips/msa/vp8_macros_msa.h"
 
 #define TRANSPOSE4x4_H(in0, in1, in2, in3, out0, out1, out2, out3) \
@@ -194,3 +198,5 @@ void vp8_short_walsh4x4_msa(int16_t *input, int16_t *output, int32_t pitch) {
   PCKEV_H2_SH(in1_w, in0_w, in3_w, in2_w, in0_h, in1_h);
   ST_SH2(in0_h, in1_h, output, 8);
 }
+
+#endif // #if VPX_ARCH_MIPS

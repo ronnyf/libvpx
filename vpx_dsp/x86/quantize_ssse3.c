@@ -8,10 +8,14 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+#include "./vpx_dsp_rtcd.h"
+
+#if defined(__SSSE3__) && !VPX_X86_NO_ASM
+
 #include <assert.h>
 #include <tmmintrin.h>
 
-#include "./vpx_dsp_rtcd.h"
 #include "vpx/vpx_integer.h"
 #include "vpx_dsp/x86/bitdepth_conversion_sse2.h"
 #include "vpx_dsp/x86/quantize_sse2.h"
@@ -230,3 +234,5 @@ void vpx_quantize_b_32x32_ssse3(const tran_low_t *coeff_ptr,
 
   *eob_ptr = accumulate_eob(eob);
 }
+
+#endif // defined(__SSSE3__)

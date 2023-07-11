@@ -9,6 +9,10 @@
  */
 
 #include "./vp8_rtcd.h"
+#include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include "vp8/common/mips/msa/vp8_macros_msa.h"
 #include "vp8/encoder/block.h"
 
@@ -209,3 +213,5 @@ void vp8_regular_quantize_b_msa(BLOCK *b, BLOCKD *d) {
       zbin_boost_ptr, coeff_ptr, zbin_ptr, round_ptr, quant_ptr,
       quant_shift_ptr, dequant_ptr, zbin_oq_value, qcoeff_ptr, dqcoeff_ptr);
 }
+
+#endif // #if VPX_ARCH_MIPS

@@ -8,9 +8,12 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-#include <immintrin.h>  // AVX2
-
+#include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if defined(__AVX2__) && !VPX_X86_NO_ASM
+
+#include <immintrin.h>  // AVX2
 #include "vpx_dsp/txfm_common.h"
 
 #define PAIR256_SET_EPI16(a, b)                                            \
@@ -624,3 +627,5 @@ void vpx_idct32x32_135_add_avx2(const tran_low_t *input, uint8_t *dest,
     dest += 16;
   }
 }
+
+#endif // defined(__AVX2__)

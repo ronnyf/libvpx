@@ -10,6 +10,8 @@
 
 #include "./vpx_config.h"
 
+#if VPX_ARCH_PPC
+
 #include "./vp9_rtcd.h"
 #include "vpx_dsp/ppc/types_vsx.h"
 
@@ -285,3 +287,5 @@ void vp9_quantize_fp_32x32_vsx(const tran_low_t *coeff_ptr, intptr_t n_coeffs,
   eob = vec_max_across(eob);
   *eob_ptr = eob[0] + 1;
 }
+
+#endif // HAVE_PPC

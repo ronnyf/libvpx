@@ -9,12 +9,16 @@
  */
 
 #include "./vpx_config.h"
-#if VPX_ARCH_X86 && HAVE_MMX
+#if (VPX_ARCH_X86 || VPX_ARCH_X86_64) && HAVE_MMX
 
 #include <mmintrin.h>
 
 #include "vpx_ports/system_state.h"
 
+//#if !VPX_X86_NO_ASM
+
 void vpx_clear_system_state() { _mm_empty(); }
+
+//#endif // !VPX_X86_NO_ASM
 
 #endif

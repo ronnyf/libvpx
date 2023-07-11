@@ -9,6 +9,10 @@
  */
 
 #include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
+#include "vpx_config.h"
 #include "vp8_rtcd.h"
 
 #if HAVE_DSPR2
@@ -74,3 +78,5 @@ void vp8_dequant_idct_add_uv_block_dspr2(short *q, short *dq,
 }
 
 #endif
+
+#endif // VPX_ARCH_MIPS

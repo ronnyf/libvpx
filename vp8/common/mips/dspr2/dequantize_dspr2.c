@@ -9,6 +9,9 @@
  */
 
 #include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include "vp8_rtcd.h"
 #include "vpx_mem/vpx_mem.h"
 
@@ -27,3 +30,5 @@ void vp8_dequant_idct_add_dspr2(short *input, short *dq, unsigned char *dest,
 }
 
 #endif
+
+#endif // VPX_ARCH_MIPS

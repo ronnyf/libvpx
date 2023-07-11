@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "vpx_config.h"
+
+#if VPX_ARCH_MIPS
+
 #include "./vp8_rtcd.h"
 #include "vpx_ports/mem.h"
 #include "vp8/common/filter.h"
@@ -795,3 +799,5 @@ void vp8_bilinear_predict16x16_msa(uint8_t *RESTRICT src, int32_t src_stride,
     }
   }
 }
+
+#endif // VPX_ARCH_MIPS

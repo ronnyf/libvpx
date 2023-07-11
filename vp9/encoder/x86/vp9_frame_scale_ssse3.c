@@ -8,6 +8,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
+
+#if defined(__SSE3__) && !VPX_X86_NO_ASM
+
 #include <tmmintrin.h>  // SSSE3
 
 #include "./vp9_rtcd.h"
@@ -905,3 +909,5 @@ void vp9_scale_and_extend_frame_ssse3(const YV12_BUFFER_CONFIG *src,
     vp9_scale_and_extend_frame_c(src, dst, filter_type, phase_scaler);
   }
 }
+
+#endif // defined(__SSE3__)

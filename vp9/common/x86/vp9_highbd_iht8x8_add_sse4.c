@@ -8,7 +8,11 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "./vpx_config.h"
 #include "./vp9_rtcd.h"
+
+#if CONFIG_VP9_HIGHBITDEPTH && defined(__SSE4_1__) && !VPX_X86_NO_ASM
+
 #include "vp9/common/vp9_idct.h"
 #include "vpx_dsp/x86/highbd_inv_txfm_sse4.h"
 #include "vpx_dsp/x86/inv_txfm_sse2.h"
@@ -253,3 +257,5 @@ void vp9_highbd_iht8x8_64_add_sse4_1(const tran_low_t *input, uint16_t *dest,
   }
   recon_and_store_8x8(io, dest, stride, bd);
 }
+
+#endif // CONFIG_VP9_HIGHBITDEPTH && defined(__SSE4_1__)

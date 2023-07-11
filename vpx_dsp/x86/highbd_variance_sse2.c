@@ -7,10 +7,13 @@
  *  in the file PATENTS.  All contributing project authors may
  *  be found in the AUTHORS file in the root of the source tree.
  */
-#include <emmintrin.h>  // SSE2
 
 #include "./vpx_config.h"
 #include "./vpx_dsp_rtcd.h"
+
+#if defined(__SSE2__) && !VPX_X86_NO_ASM
+
+#include <emmintrin.h>  // SSE2
 #include "vpx_ports/mem.h"
 
 typedef uint32_t (*high_variance_fn_t)(const uint16_t *src, int src_stride,
@@ -606,3 +609,5 @@ void vpx_highbd_comp_avg_pred_sse2(uint16_t *comp_pred, const uint16_t *pred,
     }
   }
 }
+
+#endif // defined(__SSE2__)
