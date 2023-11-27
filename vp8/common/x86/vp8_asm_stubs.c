@@ -8,6 +8,8 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#if VPX_ARCH_X86 || VPX_ARCH_X86_64
+
 #include "vpx_config.h"
 #include "vp8_rtcd.h"
 #include "vpx_ports/mem.h"
@@ -361,5 +363,7 @@ void vp8_sixtap_predict4x4_ssse3(unsigned char *src_ptr,
     }
   }
 }
+
+#endif
 
 #endif

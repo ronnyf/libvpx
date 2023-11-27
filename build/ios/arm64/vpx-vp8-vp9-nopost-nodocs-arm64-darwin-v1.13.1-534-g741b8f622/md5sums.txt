@@ -1,0 +1,14 @@
+d60798cc56a0f8f88b46d9275fcd361c  ./bin/tools/tiny_ssim
+19a50f56cee536cb24f10ce53aac4458  ./include/vpx/vpx_image.h
+f8e3a842914805d56f25281cc4881c92  ./include/vpx/vpx_encoder.h
+cc6566a19d50f1fc9dccca7d3afd529e  ./include/vpx/vpx_tpl.h
+764c482c5ee4c681828b6375ea037107  ./include/vpx/vp8cx.h
+f690fc57c5dc5a62619e42bfc464c765  ./include/vpx/vpx_integer.h
+4775fcdcf7a4ed8fe3c86181f12dfebd  ./include/vpx/vpx_codec.h
+4d975dd83eef09c4ad700eb2ce0eab00  ./include/vpx/vp8.h
+ce5eaf0a636a11b01d22c3a4b5c445b0  ./include/vpx/vp8dx.h
+7b6820d13fcb788941c987676e24c4a8  ./include/vpx/vpx_ext_ratectrl.h
+c6832764b34b5c151082e8309024f007  ./include/vpx/vpx_decoder.h
+2bdab50e78ce99bd4a9e7f56f0b3936a  ./include/vpx/vpx_frame_buffer.h
+37c0a930581aa3b54320a49ab909628c  ./lib/pkgconfig/vpx.pc
+12fbe0d99825b0148edc3005b8bc1559  ./lib/libvpx.a

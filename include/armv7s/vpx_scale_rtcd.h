@@ -1,0 +1,1 @@
+../../build/ios/armv7s/vpx_scale_rtcd.h

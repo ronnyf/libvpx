@@ -8,6 +8,8 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#if VPX_ARCH_X86 || VPX_ARCH_X86_64
+
 #include "vpx_config.h"
 #include "vp8_rtcd.h"
 #include "vp8/common/blockd.h"
@@ -21,3 +23,5 @@ void vp8_dequantize_b_mmx(BLOCKD *d, short *DQC) {
 
   vp8_dequantize_b_impl_mmx(sq, dq, DQC);
 }
+
+#endif

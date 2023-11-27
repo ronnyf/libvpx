@@ -1,0 +1,624 @@
+# ../../../configure --target=x86_64-darwin17-gcc --disable-docs --disable-examples --disable-libyuv --disable-unit-tests
+  enabling vp8_encoder
+  enabling vp8_decoder
+  enabling vp9_encoder
+  enabling vp9_decoder
+Configuring for target 'x86_64-darwin17-gcc'
+  enabling x86_64
+check_cpp
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	#if !(__pie__ || __PIE__)
+     2	#error Neither __pie__ or __PIE__ are set
+     3	#endif
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+-E -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+../../../build/make/configure.sh: line 295: -E: command not found
+  enabling pic
+check_cpp
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	#if !defined(__ILP32__) || !defined(__x86_64__)
+     2	#error "not x32"
+     3	#endif
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -E -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+/var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c:2:2: error: "not x32"
+#error "not x32"
+ ^
+1 error generated.
+  enabling runtime_cpu_detect
+check_cflags -mmmx
+check_cc -Werror -mmmx
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -Werror -mmmx -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+clang: error: argument unused during compilation: '-mmmx' [-Werror,-Wunused-command-line-argument]
+check_cflags -msse
+check_cc -Werror -msse
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -Werror -msse -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+clang: error: argument unused during compilation: '-msse' [-Werror,-Wunused-command-line-argument]
+check_cflags -msse2
+check_cc -Werror -msse2
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -Werror -msse2 -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+clang: error: argument unused during compilation: '-msse2' [-Werror,-Wunused-command-line-argument]
+check_cflags -msse3
+check_cc -Werror -msse3
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -Werror -msse3 -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+clang: error: argument unused during compilation: '-msse3' [-Werror,-Wunused-command-line-argument]
+check_cflags -mssse3
+check_cc -Werror -mssse3
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -Werror -mssse3 -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+clang: error: argument unused during compilation: '-mssse3' [-Werror,-Wunused-command-line-argument]
+check_cflags -msse4
+check_cc -Werror -msse4
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -Werror -msse4 -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+clang: error: argument unused during compilation: '-msse4' [-Werror,-Wunused-command-line-argument]
+check_cflags -mavx
+check_cc -Werror -mavx
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -Werror -mavx -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+clang: error: argument unused during compilation: '-mavx' [-Werror,-Wunused-command-line-argument]
+check_cflags -mavx2
+check_cc -Werror -mavx2
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -Werror -mavx2 -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+clang: error: argument unused during compilation: '-mavx2' [-Werror,-Wunused-command-line-argument]
+check_cflags -mavx512f -mavx512cd -mavx512bw -mavx512dq -mavx512vl
+check_cc -Werror -mavx512f -mavx512cd -mavx512bw -mavx512dq -mavx512vl
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -Werror -mavx512f -mavx512cd -mavx512bw -mavx512dq -mavx512vl -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+clang: error: argument unused during compilation: '-mavx512f' [-Werror,-Wunused-command-line-argument]
+clang: error: argument unused during compilation: '-mavx512cd' [-Werror,-Wunused-command-line-argument]
+clang: error: argument unused during compilation: '-mavx512bw' [-Werror,-Wunused-command-line-argument]
+clang: error: argument unused during compilation: '-mavx512dq' [-Werror,-Wunused-command-line-argument]
+clang: error: argument unused during compilation: '-mavx512vl' [-Werror,-Wunused-command-line-argument]
+check_cc -mavx512f
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	#include <immintrin.h>
+     2	void f(void) {
+     3	  __m512i x = _mm512_set1_epi16(0);
+     4	  (void)x;
+     5	}
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -mavx512f -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+clang: warning: argument unused during compilation: '-mavx512f' [-Wunused-command-line-argument]
+In file included from /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c:1:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/immintrin.h:14:2: error: "This header is only meant to be used on x86 and x64 architecture"
+#error "This header is only meant to be used on x86 and x64 architecture"
+ ^
+In file included from /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c:1:
+In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/immintrin.h:17:
+In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/x86gprintrin.h:15:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/hresetintrin.h:42:27: error: invalid input constraint 'a' in asm
+  __asm__ ("hreset $0" :: "a"(__eax));
+                          ^
+In file included from /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c:1:
+In file included from /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/immintrin.h:21:
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/mmintrin.h:14:2: error: "This header is only meant to be used on x86 and x64 architecture"
+#error "This header is only meant to be used on x86 and x64 architecture"
+ ^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/mmintrin.h:54:12: error: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different size
+    return (__m64)__builtin_ia32_vec_init_v2si(__i, 0);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/mmintrin.h:133:12: error: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different size
+    return (__m64)__builtin_ia32_packsswb((__v4hi)__m1, (__v4hi)__m2);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/mmintrin.h:163:12: error: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different size
+    return (__m64)__builtin_ia32_packssdw((__v2si)__m1, (__v2si)__m2);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/mmintrin.h:193:12: error: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different size
+    return (__m64)__builtin_ia32_packuswb((__v4hi)__m1, (__v4hi)__m2);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/mmintrin.h:220:12: error: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different size
+    return (__m64)__builtin_ia32_punpckhbw((__v8qi)__m1, (__v8qi)__m2);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/mmintrin.h:243:12: error: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different size
+    return (__m64)__builtin_ia32_punpckhwd((__v4hi)__m1, (__v4hi)__m2);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/mmintrin.h:264:12: error: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different size
+    return (__m64)__builtin_ia32_punpckhdq((__v2si)__m1, (__v2si)__m2);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/mmintrin.h:291:12: error: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different size
+    return (__m64)__builtin_ia32_punpcklbw((__v8qi)__m1, (__v8qi)__m2);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/mmintrin.h:314:12: error: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different size
+    return (__m64)__builtin_ia32_punpcklwd((__v4hi)__m1, (__v4hi)__m2);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/mmintrin.h:335:12: error: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different size
+    return (__m64)__builtin_ia32_punpckldq((__v2si)__m1, (__v2si)__m2);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/mmintrin.h:356:12: error: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different size
+    return (__m64)__builtin_ia32_paddb((__v8qi)__m1, (__v8qi)__m2);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/mmintrin.h:377:12: error: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different size
+    return (__m64)__builtin_ia32_paddw((__v4hi)__m1, (__v4hi)__m2);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/mmintrin.h:398:12: error: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different size
+    return (__m64)__builtin_ia32_paddd((__v2si)__m1, (__v2si)__m2);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/mmintrin.h:420:12: error: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different size
+    return (__m64)__builtin_ia32_paddsb((__v8qi)__m1, (__v8qi)__m2);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/mmintrin.h:443:12: error: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different size
+    return (__m64)__builtin_ia32_paddsw((__v4hi)__m1, (__v4hi)__m2);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include/mmintrin.h:465:12: error: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different size
+    return (__m64)__builtin_ia32_paddusb((__v8qi)__m1, (__v8qi)__m2);
+           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+    disabling avx512: not supported by compiler
+  using yasm
+check_cxxflags -DNDEBUG
+check_cxx -Werror -DNDEBUG
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -Werror -DNDEBUG -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -DNDEBUG
+check_cc -Werror -DNDEBUG
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -Werror -DNDEBUG -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -O3
+check_cxx -Werror -O3
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -Werror -O3 -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -O3
+check_cc -Werror -O3
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -Werror -O3 -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -fPIC
+check_cxx -Werror -fPIC
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -Werror -fPIC -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -fPIC
+check_cc -Werror -fPIC
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -Werror -fPIC -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cc
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	unsigned int e = 'O'<<24 | '2'<<16 | 'B'<<8 | 'E';
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cc
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	static inline int function(void) {}
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+/var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c:1:35: warning: non-void function does not return a value [-Wreturn-type]
+static inline int function(void) {}
+                                  ^
+1 warning generated.
+check_header pthread.h
+check_cpp
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	#include "pthread.h"
+     2	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -E -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_lib -lpthread
+check_cc -lpthread
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	#include <pthread.h>
+     2	#include <stddef.h>
+     3	int main(void) { return pthread_create(NULL, NULL, NULL, NULL); }
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -lpthread -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+clang: warning: -lpthread: 'linker' input unused [-Wunused-command-line-argument]
+/var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c:3:62: warning: null passed to a callee that requires a non-null argument [-Wnonnull]
+int main(void) { return pthread_create(NULL, NULL, NULL, NULL); }
+                                       ~~~~                  ^
+/var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c:3:62: warning: null passed to a callee that requires a non-null argument [-Wnonnull]
+int main(void) { return pthread_create(NULL, NULL, NULL, NULL); }
+                                                   ~~~~      ^
+2 warnings generated.
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.x /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o -lpthread
+check_cxxflags -Wall
+check_cxx -Werror -Wall
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Werror -Wall -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -Wall
+check_cc -Werror -Wall
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Werror -Wall -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -Wdisabled-optimization
+check_cxx -Werror -Wdisabled-optimization
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Werror -Wdisabled-optimization -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -Wdisabled-optimization
+check_cc -Werror -Wdisabled-optimization
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Werror -Wdisabled-optimization -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -Wextra-semi
+check_cxx -Werror -Wextra-semi
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Werror -Wextra-semi -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -Wextra-semi
+check_cc -Werror -Wextra-semi
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Werror -Wextra-semi -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -Wextra-semi-stmt
+check_cxx -Werror -Wextra-semi-stmt
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Werror -Wextra-semi-stmt -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -Wextra-semi-stmt
+check_cc -Werror -Wextra-semi-stmt
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Werror -Wextra-semi-stmt -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -Wfloat-conversion
+check_cxx -Werror -Wfloat-conversion
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Werror -Wfloat-conversion -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -Wfloat-conversion
+check_cc -Werror -Wfloat-conversion
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Werror -Wfloat-conversion -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -Wformat=2
+check_cxx -Werror -Wformat=2
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Werror -Wformat=2 -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -Wformat=2
+check_cc -Werror -Wformat=2
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Werror -Wformat=2 -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -Wparentheses-equality
+check_cxx -Werror -Wparentheses-equality
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Werror -Wparentheses-equality -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -Wparentheses-equality
+check_cc -Werror -Wparentheses-equality
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Werror -Wparentheses-equality -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -Wpointer-arith
+check_cxx -Werror -Wpointer-arith
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Werror -Wpointer-arith -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -Wpointer-arith
+check_cc -Werror -Wpointer-arith
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Werror -Wpointer-arith -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -Wtype-limits
+check_cxx -Werror -Wtype-limits
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Werror -Wtype-limits -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -Wtype-limits
+check_cc -Werror -Wtype-limits
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Werror -Wtype-limits -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -Wcast-qual
+check_cxx -Werror -Wcast-qual
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Werror -Wcast-qual -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -Wcast-qual
+check_cc -Werror -Wcast-qual
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Werror -Wcast-qual -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -Wvla
+check_cxx -Werror -Wvla
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Werror -Wvla -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -Wvla
+check_cc -Werror -Wvla
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Werror -Wvla -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -Wimplicit-function-declaration
+check_cxx -Werror -Wimplicit-function-declaration
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Werror -Wimplicit-function-declaration -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -Wimplicit-function-declaration
+check_cc -Werror -Wimplicit-function-declaration
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Werror -Wimplicit-function-declaration -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -Wmissing-declarations
+check_cxx -Werror -Wmissing-declarations
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Werror -Wmissing-declarations -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -Wmissing-declarations
+check_cc -Werror -Wmissing-declarations
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Werror -Wmissing-declarations -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -Wmissing-prototypes
+check_cxx -Werror -Wmissing-prototypes
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Werror -Wmissing-prototypes -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -Wmissing-prototypes
+check_cc -Werror -Wmissing-prototypes
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Werror -Wmissing-prototypes -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -Wshadow
+check_cxx -Werror -Wshadow
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Werror -Wshadow -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -Wshadow
+check_cc -Werror -Wshadow
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Werror -Wshadow -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -Wuninitialized
+check_cxx -Werror -Wuninitialized
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Werror -Wuninitialized -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -Wuninitialized
+check_cc -Werror -Wuninitialized
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Werror -Wuninitialized -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -Wunreachable-code-aggressive
+check_cxx -Werror -Wunreachable-code-aggressive
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Werror -Wunreachable-code-aggressive -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -Wunreachable-code-aggressive
+check_cc -Werror -Wunreachable-code-aggressive
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Werror -Wunreachable-code-aggressive -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -Wunused
+check_cxx -Werror -Wunused
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Werror -Wunused -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -Wunused
+check_cc -Werror -Wunused
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Werror -Wunused -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -Wextra
+check_cxx -Werror -Wextra
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Werror -Wextra -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cflags -Wextra
+check_cc -Werror -Wextra
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Werror -Wextra -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cflags -Wundef
+check_cc -Werror -Wundef
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Werror -Wundef -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cflags -Wframe-larger-than=52000
+check_cc -Werror -Wframe-larger-than=52000
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wundef -Werror -Wframe-larger-than=52000 -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cflags -std=gnu99
+check_cc -Werror -std=gnu99
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wundef -Wframe-larger-than=52000 -Werror -std=gnu99 -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cflags -Wshorten-64-to-32
+check_cc -Werror -Wshorten-64-to-32
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wundef -Wframe-larger-than=52000 -std=gnu99 -Werror -Wshorten-64-to-32 -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_cxxflags -Wc++14-extensions
+check_cxx -Werror -Wc++14-extensions
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Werror -Wc++14-extensions -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cxxflags -Wc++17-extensions
+check_cxx -Werror -Wc++17-extensions
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wc++14-extensions -Werror -Wc++17-extensions -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cxxflags -Wc++20-extensions
+check_cxx -Werror -Wc++20-extensions
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wc++14-extensions -Wc++17-extensions -Werror -Wc++20-extensions -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cxxflags -Wnon-virtual-dtor
+check_cxx -Werror -Wnon-virtual-dtor
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wc++14-extensions -Wc++17-extensions -Wc++20-extensions -Werror -Wnon-virtual-dtor -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cxxflags -Wno-missing-declarations
+check_cxx -Werror -Wno-missing-declarations
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wc++14-extensions -Wc++17-extensions -Wc++20-extensions -Wnon-virtual-dtor -Werror -Wno-missing-declarations -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cxxflags -Wno-missing-prototypes
+check_cxx -Werror -Wno-missing-prototypes
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wc++14-extensions -Wc++17-extensions -Wc++20-extensions -Wnon-virtual-dtor -Werror -Wno-missing-prototypes -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cxxflags -Wno-pass-failed
+check_cxx -Werror -Wno-pass-failed
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wc++14-extensions -Wc++17-extensions -Wc++20-extensions -Wnon-virtual-dtor -Werror -Wno-pass-failed -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cxxflags -Wno-shadow
+check_cxx -Werror -Wno-shadow
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wc++14-extensions -Wc++17-extensions -Wc++20-extensions -Wnon-virtual-dtor -Werror -Wno-shadow -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cxxflags -Wno-unused-parameter
+check_cxx -Werror -Wno-unused-parameter
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wc++14-extensions -Wc++17-extensions -Wc++20-extensions -Wnon-virtual-dtor -Werror -Wno-unused-parameter -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+  enabling postproc
+check_cxxflags -std=gnu++11
+check_cxx -Werror -std=gnu++11
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wc++14-extensions -Wc++17-extensions -Wc++20-extensions -Wnon-virtual-dtor -Werror -std=gnu++11 -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_cxxflags -std=gnu++11
+check_cxx -Werror -std=gnu++11
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wc++14-extensions -Wc++17-extensions -Wc++20-extensions -Wnon-virtual-dtor -std=gnu++11 -Werror -std=gnu++11 -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+  enabling webm_io
+check_cxx
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+     1	int z;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wc++14-extensions -Wc++17-extensions -Wc++20-extensions -Wnon-virtual-dtor -std=gnu++11 -std=gnu++11 -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.cc
+check_header stdio.h
+check_cpp
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	#include "stdio.h"
+     2	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wundef -Wframe-larger-than=52000 -std=gnu99 -Wshorten-64-to-32 -E -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_ld
+check_cc
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	int main(void) {return 0;}
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wundef -Wframe-larger-than=52000 -std=gnu99 -Wshorten-64-to-32 -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.x /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o -lpthread
+check_header pthread.h
+check_cpp
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	#include "pthread.h"
+     2	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wundef -Wframe-larger-than=52000 -std=gnu99 -Wshorten-64-to-32 -E -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_lib -lpthread
+check_cc -lpthread
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	#include <pthread.h>
+     2	#include <stddef.h>
+     3	int main(void) { return pthread_create(NULL, NULL, NULL, NULL); }
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wundef -Wframe-larger-than=52000 -std=gnu99 -Wshorten-64-to-32 -lpthread -c -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+clang: warning: -lpthread: 'linker' input unused [-Wunused-command-line-argument]
+/var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c:3:62: warning: null passed to a callee that requires a non-null argument [-Wnonnull]
+int main(void) { return pthread_create(NULL, NULL, NULL, NULL); }
+                                       ~~~~                  ^
+/var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c:3:62: warning: null passed to a callee that requires a non-null argument [-Wnonnull]
+int main(void) { return pthread_create(NULL, NULL, NULL, NULL); }
+                                                   ~~~~      ^
+2 warnings generated.
+g++ -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.x /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o -lpthread -lpthread
+ld: warning: ignoring duplicate libraries: '-lpthread'
+check_header unistd.h
+check_cpp
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	#include "unistd.h"
+     2	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wundef -Wframe-larger-than=52000 -std=gnu99 -Wshorten-64-to-32 -E -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+check_header vpx/vpx_integer.h -I../../..
+check_cpp -I../../..
+BEGIN /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+     1	#include "vpx/vpx_integer.h"
+     2	int x;
+END /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c
+gcc -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -mmacosx-version-min=10.13 -m64 -arch x86_64 -DNDEBUG -O3 -fPIC -Wall -Wdisabled-optimization -Wextra-semi -Wextra-semi-stmt -Wfloat-conversion -Wformat=2 -Wparentheses-equality -Wpointer-arith -Wtype-limits -Wcast-qual -Wvla -Wimplicit-function-declaration -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wuninitialized -Wunreachable-code-aggressive -Wunused -Wextra -Wundef -Wframe-larger-than=52000 -std=gnu99 -Wshorten-64-to-32 -I../../.. -E -o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.o /var/folders/h4/l7fj8x6d2594jdnrm5ty3xt40000gq/T//vpx-conf-60867-31497.c

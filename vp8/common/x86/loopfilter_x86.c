@@ -8,6 +8,8 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#if VPX_ARCH_X86 || VPX_ARCH_X86_64
+
 #include "vpx_config.h"
 #include "vp8/common/loopfilter.h"
 
@@ -127,3 +129,5 @@ void vp8_loop_filter_bvs_sse2(unsigned char *y_ptr, int y_stride,
 }
 
 #endif
+
+#endif // VPX_ARCH_X86 || VPX_ARCH_X86_64
